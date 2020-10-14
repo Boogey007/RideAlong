@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "746747137649",
+    "firebase_url": "https://ridealong-f4495.firebaseio.com",
+    "project_id": "ridealong-f4495",
+    "storage_bucket": "ridealong-f4495.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746747137649:android:70a92f562ddecdb74f95d0",
+        "android_client_info": {
+          "package_name": "com.example.ridealong"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746747137649-ureeio6g7ebvlc1ivonqpf39i4biidrn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSs1D8S18h9VQVzbe_w1S-HrciJ61Fvgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746747137649-ureeio6g7ebvlc1ivonqpf39i4biidrn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
