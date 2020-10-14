@@ -28,9 +28,6 @@ public class FinalMainActivity extends AppCompatActivity {
                 startActivity(new Intent(FinalMainActivity.this,MainActivity.class));
             }
         });
-
-
-
     }
 
     @Override
