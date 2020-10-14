@@ -391,6 +391,9 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
 
     private void startSearch(String txt_search) {
 
+        // TODO: Switch this with a partial guid to pair users instead of email
+        // https://stackoverflow.com/questions/49071905/firebase-search-with-firebaserecycleradapter-firebase-ui-3-2-2/51902636
+        // https://stackoverflow.com/questions/57030713/firebaserecycleradapter-in-firebaserecycleradapter-cannot-be-applied-to
         Query query = FirebaseDatabase.getInstance()
                 .getReference(Commonx.USER_INFORMATION)
                 .orderByChild("email")

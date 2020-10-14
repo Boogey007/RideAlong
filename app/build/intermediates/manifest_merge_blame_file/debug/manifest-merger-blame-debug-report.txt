@@ -6,29 +6,29 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="22"
-8-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
+8-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
+9-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
 10    <!--
 11         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
 12         Google Maps Android API v2, but you must specify either coarse or fine
 13         location permissions for the 'MyLocation' functionality.
 14    -->
 15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-15-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:9:5-79
-15-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:9:22-76
+15-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:9:5-79
+15-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:9:22-76
 16    <uses-permission android:name="android.permission.INTERNET" />
-16-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:10:5-67
-16-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:10:22-64
+16-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:10:5-67
+16-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:10:22-64
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-17-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:11:5-79
-17-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:11:22-76
+17-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:11:5-79
+17-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:11:22-76
 18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-18-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:12:5-80
-18-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:12:22-77
+18-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:12:5-80
+18-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:12:22-77
 19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-19-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:13:5-81
-19-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:13:22-78
+19-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:13:5-81
+19-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:13:22-78
 20
 21    <uses-feature
 21-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\b08a8120c89693dbb4985931807867c8\jetified-play-services-maps-16.1.0\AndroidManifest.xml:26:5-28:35
@@ -48,50 +48,50 @@
 27-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\5ec41b7cdf4af4f51c4b8171ba782b41\jetified-firebase-iid-17.0.4\AndroidManifest.xml:26:22-79
 28
 29    <application
-29-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:16:5-67:19
+29-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:16:5-67:19
 30        android:allowBackup="true"
-30-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:17:9-35
+30-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:17:9-35
 31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 31-->[androidx.core:core:1.1.0] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\9b282167d5edf2ce15b1570bf9b055c0\core-1.1.0\AndroidManifest.xml:24:18-86
 32        android:debuggable="true"
 33        android:icon="@mipmap/ic_launcher"
-33-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:18:9-43
+33-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:18:9-43
 34        android:label="@string/app_name"
-34-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:19:9-41
+34-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:19:9-41
 35        android:roundIcon="@mipmap/ic_launcher_round"
-35-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:20:9-54
+35-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:20:9-54
 36        android:supportsRtl="true"
-36-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:21:9-35
+36-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:21:9-35
 37        android:testOnly="true"
 38        android:theme="@style/AppTheme" >
-38-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:22:9-40
+38-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:22:9-40
 39        <activity android:name="xyz.mmhasanovee.fnflocationtracker.UserProfileActivity" />
-39-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:23:9-66
-39-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:23:19-54
+39-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:23:9-66
+39-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:23:19-54
 40        <activity android:name="xyz.mmhasanovee.fnflocationtracker.SettingsActivity" />
-40-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:24:9-54
-40-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:24:19-51
+40-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:24:9-54
+40-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:24:19-51
 41        <activity android:name="xyz.mmhasanovee.fnflocationtracker.FinalMainActivity" />
-41-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:25:9-55
-41-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:25:19-52
+41-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:25:9-55
+41-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:25:19-52
 42        <activity
-42-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:26:9-28:59
+42-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:26:9-28:59
 43            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-43-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:27:13-76
+43-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:27:13-76
 44            android:theme="@style/Base.Theme.AppCompat" />
-44-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:28:13-56
+44-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:28:13-56
 45        <activity android:name="xyz.mmhasanovee.fnflocationtracker.SplashActivity" >
-45-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:29:9-35:20
-45-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:29:19-49
+45-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:29:9-35:20
+45-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:29:19-49
 46            <intent-filter>
-46-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:30:13-34:29
+46-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:30:13-34:29
 47                <action android:name="android.intent.action.MAIN" />
-47-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:31:17-69
-47-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:31:25-66
+47-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:31:17-69
+47-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:31:25-66
 48
 49                <category android:name="android.intent.category.LAUNCHER" />
-49-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:33:17-77
-49-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:33:27-74
+49-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:33:17-77
+49-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:33:27-74
 50            </intent-filter>
 51        </activity>
 52        <!--
@@ -103,51 +103,51 @@
 58             You can define the keys for the debug and release targets in src/debug/ and src/release/.
 59        -->
 60        <meta-data
-60-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:44:9-46:55
+60-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:44:9-46:55
 61            android:name="com.google.android.geo.API_KEY"
-61-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:45:13-58
+61-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:45:13-58
 62            android:value="@string/google_maps_key" />
-62-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:46:13-52
+62-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:46:13-52
 63
 64        <activity
-64-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:48:9-50:63
+64-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:48:9-50:63
 65            android:name="xyz.mmhasanovee.fnflocationtracker.TrackingActivity"
-65-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:49:13-45
+65-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:49:13-45
 66            android:label="@string/title_activity_tracking" />
-66-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:50:13-60
+66-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:50:13-60
 67        <activity android:name="xyz.mmhasanovee.fnflocationtracker.FriendRequestActivity" />
-67-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:51:9-59
-67-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:51:19-56
+67-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:51:9-59
+67-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:51:19-56
 68
 69        <service android:name="xyz.mmhasanovee.fnflocationtracker.Service.MyFCMService" >
-69-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:53:9-57:19
-69-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:53:18-54
+69-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:53:9-57:19
+69-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:53:18-54
 70            <intent-filter>
-70-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:54:13-56:29
+70-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:54:13-56:29
 71                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-71-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:55:17-78
-71-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:55:25-75
+71-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:55:17-78
+71-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:55:25-75
 72            </intent-filter>
 73        </service>
 74
 75        <receiver android:name="xyz.mmhasanovee.fnflocationtracker.Service.MyLocationReceiver" />
-75-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:59:9-64
-75-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:59:19-61
+75-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:59:9-64
+75-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:59:19-61
 76
 77        <activity android:name="xyz.mmhasanovee.fnflocationtracker.AllPeopleActivity" />
-77-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:61:9-55
-77-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:61:19-52
+77-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:61:9-55
+77-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:61:19-52
 78        <activity
-78-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:62:9-65:59
+78-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:62:9-65:59
 79            android:name="xyz.mmhasanovee.fnflocationtracker.HomeActivity"
-79-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:63:13-41
+79-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:63:13-41
 80            android:label="@string/title_activity_home"
-80-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:64:13-56
+80-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:64:13-56
 81            android:theme="@style/AppTheme.NoActionBar" />
-81-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:65:13-56
+81-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:65:13-56
 82        <activity android:name="xyz.mmhasanovee.fnflocationtracker.MainActivity" />
-82-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:66:9-50
-82-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:66:19-47
+82-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:66:9-50
+82-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:66:19-47
 83
 84        <meta-data
 84-->[com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:16:9-18:69
@@ -412,10 +412,10 @@
 221            android:exported="true" >
 221-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\d04ae39d7ad9b4a2bf54dec9e0e61091\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:30:13-36
 222            <intent-filter android:priority="-500" >
-222-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:54:13-56:29
+222-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:54:13-56:29
 223                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-223-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:55:17-78
-223-->C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:55:25-75
+223-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:55:17-78
+223-->C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:55:25-75
 224            </intent-filter>
 225        </service>
 226

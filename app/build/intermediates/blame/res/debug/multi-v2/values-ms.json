@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\IIQ\\Fnf-Location-Tracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ms\\values-ms.xml",
+            "outputFile": "C:\\IIQ\\RideAlong\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ms\\values-ms.xml",
             "map": [
                 {
                     "source": "C:\\Users\\booge\\.gradle\\caches\\transforms-2\\files-2.1\\a97f05674ba544ffb0583a697509d512\\jetified-navigation-ui-2.0.0\\res\\values-ms\\values-ms.xml",

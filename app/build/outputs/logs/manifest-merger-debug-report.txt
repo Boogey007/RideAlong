@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:1-69:12
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:1-69:12
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:2:1-109:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\f3727a8777fd24b60f54249987d59532\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\932ff712aa1d906347110e7547a64025\play-services-auth-17.0.0\AndroidManifest.xml:17:1-39:12
@@ -91,29 +91,29 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\booge\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\b448eeadd9344e377db6ce91ed38f2e9\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\59e7ab5ab881f6d6b18b3207a1f71e29\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\47f0dad2d625c8c90572677fc3d58217\firebase-database-collection-16.0.1\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:1-69:12
 	package
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:3:5-49
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:3:5-49
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:1-69:12
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:1-69:12
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:1-69:12
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:1-69:12
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:9:5-79
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:9:22-76
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:9:22-76
 uses-permission#android.permission.INTERNET
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:10:5-67
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:10:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:13:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:13:5-67
 MERGED from [com.firebaseui:firebase-ui-database:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\166413642131de00a52d789f3f059fa0\jetified-firebase-ui-database-4.3.1\AndroidManifest.xml:11:5-67
@@ -133,9 +133,9 @@ MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\booge\
 MERGED from [com.google.firebase:firebase-iid:17.0.4] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\5ec41b7cdf4af4f51c4b8171ba782b41\jetified-firebase-iid-17.0.4\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:17.0.4] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\5ec41b7cdf4af4f51c4b8171ba782b41\jetified-firebase-iid-17.0.4\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:10:22-64
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:10:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:11:5-79
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:11:5-79
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:12:5-79
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:12:5-79
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\b08a8120c89693dbb4985931807867c8\jetified-play-services-maps-16.1.0\AndroidManifest.xml:23:5-79
@@ -153,17 +153,17 @@ MERGED from [com.google.firebase:firebase-analytics-impl:16.3.0] C:\Users\booge\
 MERGED from [com.google.firebase:firebase-iid:17.0.4] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\5ec41b7cdf4af4f51c4b8171ba782b41\jetified-firebase-iid-17.0.4\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-iid:17.0.4] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\5ec41b7cdf4af4f51c4b8171ba782b41\jetified-firebase-iid-17.0.4\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:11:22-76
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:11:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:12:5-80
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:12:5-80
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:12:22-77
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:12:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:13:5-81
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:13:22-78
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:13:22-78
 application
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:16:5-67:19
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:16:5-67:19
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:15:5-107:19
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:15:5-107:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\f3727a8777fd24b60f54249987d59532\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -239,99 +239,99 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\booge\.gradle\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\9b282167d5edf2ce15b1570bf9b055c0\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:21:9-35
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:21:9-35
 	android:label
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:19:9-41
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:19:9-41
 	android:roundIcon
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:20:9-54
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:20:9-54
 	android:icon
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:18:9-43
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:18:9-43
 	android:allowBackup
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:22:9-40
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:22:9-40
 activity#xyz.mmhasanovee.fnflocationtracker.UserProfileActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:23:9-66
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:23:9-66
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:23:19-54
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:23:19-54
 activity#xyz.mmhasanovee.fnflocationtracker.SettingsActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:24:9-54
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:24:9-54
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:24:19-51
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:24:19-51
 activity#xyz.mmhasanovee.fnflocationtracker.FinalMainActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:25:9-55
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:25:9-55
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:25:19-52
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:25:19-52
 activity#com.theartofdev.edmodo.cropper.CropImageActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:26:9-28:59
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:26:9-28:59
 	android:theme
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:28:13-56
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:28:13-56
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:27:13-76
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:27:13-76
 activity#xyz.mmhasanovee.fnflocationtracker.SplashActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:29:9-35:20
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:29:9-35:20
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:29:19-49
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:29:19-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:30:13-34:29
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:30:13-34:29
 action#android.intent.action.MAIN
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:31:17-69
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:31:25-66
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:33:17-77
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:33:17-77
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:33:27-74
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:33:27-74
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:44:9-46:55
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:44:9-46:55
 	android:value
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:46:13-52
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:46:13-52
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:45:13-58
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:45:13-58
 activity#xyz.mmhasanovee.fnflocationtracker.TrackingActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:48:9-50:63
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:48:9-50:63
 	android:label
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:50:13-60
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:50:13-60
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:49:13-45
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:49:13-45
 activity#xyz.mmhasanovee.fnflocationtracker.FriendRequestActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:51:9-59
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:51:9-59
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:51:19-56
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:51:19-56
 service#xyz.mmhasanovee.fnflocationtracker.Service.MyFCMService
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:53:9-57:19
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:53:9-57:19
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:53:18-54
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:53:18-54
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:54:13-56:29
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:54:13-56:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:55:17-78
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:55:17-78
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:55:25-75
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:55:25-75
 receiver#xyz.mmhasanovee.fnflocationtracker.Service.MyLocationReceiver
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:59:9-64
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:59:9-64
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:59:19-61
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:59:19-61
 activity#xyz.mmhasanovee.fnflocationtracker.AllPeopleActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:61:9-55
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:61:9-55
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:61:19-52
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:61:19-52
 activity#xyz.mmhasanovee.fnflocationtracker.HomeActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:62:9-65:59
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:62:9-65:59
 	android:label
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:64:13-56
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:64:13-56
 	android:theme
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:65:13-56
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:65:13-56
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:63:13-41
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:63:13-41
 activity#xyz.mmhasanovee.fnflocationtracker.MainActivity
-ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:66:9-50
+ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:66:9-50
 	android:name
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml:66:19-47
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml:66:19-47
 uses-sdk
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:8:5-10:41
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:8:5-10:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\f3727a8777fd24b60f54249987d59532\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
@@ -506,16 +506,16 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\booge\.gradle\caches
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\59e7ab5ab881f6d6b18b3207a1f71e29\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\47f0dad2d625c8c90572677fc3d58217\firebase-database-collection-16.0.1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\47f0dad2d625c8c90572677fc3d58217\firebase-database-collection-16.0.1\AndroidManifest.xml:5:5-44
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
-INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
+INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
-		INJECTED from C:\IIQ\Fnf-Location-Tracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
+		ADDED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
+		INJECTED from C:\IIQ\RideAlong\app\src\main\AndroidManifest.xml
 meta-data#com.google.android.gms.version
 ADDED from [com.firebaseui:firebase-ui-auth:4.3.1] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\e8b2e3cb8f69f4e836b045d2cc6124ff\jetified-firebase-ui-auth-4.3.1\AndroidManifest.xml:16:9-18:69
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\booge\.gradle\caches\transforms-2\files-2.1\45e77d05ed6f6ebe9755496bce6970ff\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69

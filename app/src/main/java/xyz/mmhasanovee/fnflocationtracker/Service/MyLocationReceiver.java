@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
+import android.util.Log;
 
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
@@ -41,6 +42,7 @@ public class MyLocationReceiver extends BroadcastReceiver {
                 if(result!=null){
 
                     Location location = result.getLastLocation();
+                    Log.d("HEYYY", "onReceive: location" + String.valueOf(location));
                     if(Commonx.loggedUser!=null) //foreground
                         publicLocation.child(Commonx.loggedUser.getUid()).setValue(location);
                     else{

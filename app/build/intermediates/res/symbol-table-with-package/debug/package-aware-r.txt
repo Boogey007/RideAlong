@@ -1558,8 +1558,6 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
-id final_main_about
-id final_main_about2
 id final_main_image
 id fitCenter
 id fixed
@@ -1577,7 +1575,9 @@ id friend_request_list_is_empty
 id ghost_view
 id gone
 id google_connect
+id google_connect2
 id group_divider
+id group_name
 id groups
 id header
 id header_text
@@ -1610,6 +1610,8 @@ id listMode
 id list_item
 id logo
 id m_search_bar
+id main_about
+id main_about2
 id main_tos_and_pp
 id map
 id masked
@@ -1635,7 +1637,6 @@ id name
 id name_layout
 id nav_add_people
 id nav_controller_view_tag
-id nav_exit_app
 id nav_find_people
 id nav_gallery
 id nav_home
@@ -1722,6 +1723,7 @@ id showHome
 id showTitle
 id sign_in_email_sent_header_text
 id sign_in_email_sent_text
+id sign_up
 id smallLabel
 id snackbar_action
 id snackbar_text

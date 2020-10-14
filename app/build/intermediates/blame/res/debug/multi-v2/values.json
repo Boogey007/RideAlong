@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\IIQ\\Fnf-Location-Tracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\IIQ\\RideAlong\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\booge\\.gradle\\caches\\transforms-2\\files-2.1\\9aa43e4d859846d255e0c2916968f517\\play-services-base-17.0.0\\res\\values\\values.xml",
@@ -46,6 +46,23 @@
                         "startOffsets": "38355,43068",
                         "endColumns": "67,166",
                         "endOffsets": "38418,43230"
+                    }
+                },
+                {
+                    "source": "C:\\IIQ\\RideAlong\\app\\src\\debug\\res\\values\\google_maps_api.xml",
+                    "from": {
+                        "startLines": "22",
+                        "startColumns": "4",
+                        "startOffsets": "924",
+                        "endColumns": "137",
+                        "endOffsets": "1057"
+                    },
+                    "to": {
+                        "startLines": "834",
+                        "startColumns": "4",
+                        "startOffsets": "61831",
+                        "endColumns": "137",
+                        "endOffsets": "61964"
                     }
                 },
                 {
@@ -94,37 +111,6 @@
                     }
                 },
                 {
-                    "source": "C:\\IIQ\\Fnf-Location-Tracker\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "-1,-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1,-1"
-                    },
-                    "to": {
-                        "startLines": "876,883,884,888,2327",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "65382,65742,65832,65982,158271",
-                        "endLines": "882,883,887,888,2330",
-                        "endColumns": "12,89,12,79,12",
-                        "endOffsets": "65737,65827,65977,66057,158454"
-                    }
-                },
-                {
-                    "source": "C:\\IIQ\\Fnf-Location-Tracker\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
-                    },
-                    "to": {
-                        "startLines": "720,726,828,831,832,833,837,860",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "44929,45646,61260,61498,61602,61711,62095,64181",
-                        "endColumns": "143,111,81,103,108,119,100,77",
-                        "endOffsets": "45068,45753,61337,61597,61706,61826,62191,64254"
-                    }
-                },
-                {
                     "source": "C:\\Users\\booge\\.gradle\\caches\\transforms-2\\files-2.1\\8ffa36460f9b81983f25b1a71af16e35\\jetified-library-1.4.2\\res\\values\\values.xml",
                     "from": {
                         "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
@@ -170,21 +156,6 @@
                         "endLines": "15,192,193,194,195,392,393,394,916,2312,2315,2318",
                         "endColumns": "51,60,61,61,63,58,56,53,12,12,12,12",
                         "endOffsets": "781,9996,10058,10120,10184,23346,23403,23457,67922,157569,157695,157823"
-                    }
-                },
-                {
-                    "source": "C:\\IIQ\\Fnf-Location-Tracker\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "-1,-1,-1",
-                        "startColumns": "-1,-1,-1",
-                        "startOffsets": "-1,-1,-1"
-                    },
-                    "to": {
-                        "startLines": "196,197,198",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "10189,10235,10282",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "10230,10277,10328"
                     }
                 },
                 {
@@ -251,18 +222,18 @@
                     }
                 },
                 {
-                    "source": "C:\\IIQ\\Fnf-Location-Tracker\\app\\src\\debug\\res\\values\\google_maps_api.xml",
+                    "source": "C:\\IIQ\\RideAlong\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
-                        "startLines": "-1",
-                        "startColumns": "-1",
-                        "startOffsets": "-1"
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
-                        "startLines": "834",
-                        "startColumns": "4",
-                        "startOffsets": "61831",
-                        "endColumns": "137",
-                        "endOffsets": "61964"
+                        "startLines": "720,726,828,831,832,833,837,860",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "44929,45646,61260,61498,61602,61711,62095,64181",
+                        "endColumns": "143,111,81,103,108,119,100,77",
+                        "endOffsets": "45068,45753,61337,61597,61706,61826,62191,64254"
                     }
                 },
                 {
@@ -279,6 +250,36 @@
                         "endLines": "301,541,542,543,548,549,2799",
                         "endColumns": "74,46,46,39,43,43,12",
                         "endOffsets": "17219,32727,32774,32814,33070,33114,188002"
+                    }
+                },
+                {
+                    "source": "C:\\IIQ\\RideAlong\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "388,389,450,524,525",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "23035,23093,27032,31599,31649",
+                        "endColumns": "57,55,41,49,57",
+                        "endOffsets": "23088,23144,27069,31644,31702"
+                    }
+                },
+                {
+                    "source": "C:\\IIQ\\RideAlong\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1",
+                        "startColumns": "-1,-1,-1",
+                        "startOffsets": "-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "196,197,198",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "10189,10235,10282",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "10230,10277,10328"
                     }
                 },
                 {
@@ -359,39 +360,6 @@
                     }
                 },
                 {
-                    "source": "C:\\IIQ\\Fnf-Location-Tracker\\app\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "-1,-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1,-1"
-                    },
-                    "to": {
-                        "startLines": "388,389,450,524,525",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "23035,23093,27032,31599,31649",
-                        "endColumns": "57,55,41,49,57",
-                        "endOffsets": "23088,23144,27069,31644,31702"
-                    }
-                },
-                {
-                    "source": "C:\\IIQ\\Fnf-Location-Tracker\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startColumns": "4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startOffsets": "17,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "endColumns": "47,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "endOffsets": "60,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
-                    },
-                    "to": {
-                        "startLines": "688,839,840,841,842,843,844,849,850,851,852,853,863,864,2572",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "41400,62349,62398,62441,62484,62529,62582,62979,63041,63116,63176,63242,64383,64444,172016",
-                        "endLines": "688,839,840,841,842,843,844,849,850,851,852,853,863,864,2575",
-                        "endColumns": "47,48,42,42,44,52,44,61,74,59,65,62,60,55,12",
-                        "endOffsets": "41443,62393,62436,62479,62524,62577,62622,63036,63111,63171,63237,63300,64439,64495,172166"
-                    }
-                },
-                {
                     "source": "C:\\Users\\booge\\.gradle\\caches\\transforms-2\\files-2.1\\f4b9ee06b5f515aff5b2cb3b6e600925\\jetified-MaterialSearchBar-0.8.2\\res\\values\\values.xml",
                     "from": {
                         "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
@@ -436,6 +404,38 @@
                         "startOffsets": "36230",
                         "endColumns": "52",
                         "endOffsets": "36278"
+                    }
+                },
+                {
+                    "source": "C:\\IIQ\\RideAlong\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "688,839,840,841,842,843,844,849,850,851,852,853,863,864,2572",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "41400,62349,62398,62441,62484,62529,62582,62979,63041,63116,63176,63242,64383,64444,172016",
+                        "endLines": "688,839,840,841,842,843,844,849,850,851,852,853,863,864,2575",
+                        "endColumns": "47,48,42,42,44,52,44,61,74,59,65,62,60,55,12",
+                        "endOffsets": "41443,62393,62436,62479,62524,62577,62622,63036,63111,63171,63237,63300,64439,64495,172166"
+                    }
+                },
+                {
+                    "source": "C:\\IIQ\\RideAlong\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "876,883,884,888,2327",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "65382,65742,65832,65982,158271",
+                        "endLines": "882,883,887,888,2330",
+                        "endColumns": "12,89,12,79,12",
+                        "endOffsets": "65737,65827,65977,66057,158454"
                     }
                 }
             ]
