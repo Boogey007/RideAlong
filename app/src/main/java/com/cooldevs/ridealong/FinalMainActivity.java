@@ -20,13 +20,13 @@ public class FinalMainActivity extends AppCompatActivity {
 
         GoogleSignInButton signInButtonx;
 
-        signInButtonx=(GoogleSignInButton) findViewById(R.id.google_connect);
+        signInButtonx = (GoogleSignInButton) findViewById(R.id.google_connect);
 
         signInButtonx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(FinalMainActivity.this,MainActivity.class));
+                startActivity(new Intent(FinalMainActivity.this, MainActivity.class));
             }
         });
     }

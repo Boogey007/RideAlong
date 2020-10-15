@@ -19,8 +19,8 @@ import com.cooldevs.ridealong.R;
 
 public class NotificationHelper extends ContextWrapper {
 
-    private static final String XYZ_CHANNEL_ID="com.cooldevs.ridealong";
-    private static final String XYZ_CHANNEL_NAME="RideAlong";
+    private static final String CHANNEL_ID="com.cooldevs.ridealong";
+    private static final String CHANNEL_NAME="RideAlong";
 
     private NotificationManager manager;
 
@@ -34,13 +34,13 @@ public class NotificationHelper extends ContextWrapper {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void createChannel() {
 
-        NotificationChannel xyzchannel = new NotificationChannel(XYZ_CHANNEL_ID,XYZ_CHANNEL_NAME,NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID,CHANNEL_NAME,NotificationManager.IMPORTANCE_DEFAULT);
 
-        xyzchannel.enableLights(true);
-        xyzchannel.enableVibration(true);
-        xyzchannel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
+        channel.enableLights(true);
+        channel.enableVibration(true);
+        channel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
 
-        getManager().createNotificationChannel(xyzchannel);
+        getManager().createNotificationChannel(channel);
 
 
     }
@@ -65,7 +65,7 @@ public class NotificationHelper extends ContextWrapper {
                 .addNextIntent(intent)
                 .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        return new Notification.Builder(getApplicationContext(),XYZ_CHANNEL_ID)
+        return new Notification.Builder(getApplicationContext(),CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_round)
                 .setContentTitle(title)
                 .setContentText(content)

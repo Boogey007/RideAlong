@@ -7,9 +7,7 @@ public class Request {
     public String to;
     public Map<String,String> data;
 
-    public Request() {
-
-    }
+    public Request() {  }
 
     public Request(String to, Map<String, String> data) {
         this.to = to;

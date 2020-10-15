@@ -39,110 +39,49 @@ import com.cooldevs.ridealong.ViewHolder.FriendRequestViewHolder;
 
 public class FriendRequestActivity extends AppCompatActivity implements IFirebaseLoadDone {
 
-
-    FirebaseRecyclerAdapter<User, FriendRequestViewHolder> adapter,searchAdapter;
+    FirebaseRecyclerAdapter < User, FriendRequestViewHolder > adapter, searchAdapter;
     RecyclerView recycler_all_user;
     IFirebaseLoadDone firebaseLoadDone;
     TextView friend_request_empty;
 
-
-
     MaterialSearchBar searchBar;
-    List<String> suggestList = new ArrayList<>();
+    List < String > suggestList = new ArrayList < > ();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend_request);
 
-        /*searchBar = (MaterialSearchBar) findViewById(R.id.m_search_bar);
-        searchBar.setCardViewElevation(10);
-        searchBar.addTextChangeListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                List<String> suggest = new ArrayList<>();
-                for(String search:suggestList){
-
-                    if(search.toLowerCase().contains(searchBar.getText().toLowerCase()))
-                        suggest.add(search);
-                }
-
-                searchBar.setLastSuggestions(suggest);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-
-
-        });
-        searchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
-            @Override
-            public void onSearchStateChanged(boolean enabled) {
-                if(!enabled){
-
-                    if(adapter !=null){
-                        recycler_all_user.setAdapter(adapter);
-                    }
-                }
-            }
-
-            @Override
-            public void onSearchConfirmed(CharSequence text) {
-
-                startSearch(text,toString());
-
-            }
-
-            @Override
-            public void onButtonClicked(int buttonCode) {
-
-            }
-        });*/
-
         recycler_all_user = (RecyclerView) findViewById(R.id.recycler_all_people);
         recycler_all_user.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recycler_all_user.setLayoutManager(layoutManager);
-        recycler_all_user.addItemDecoration(new DividerItemDecoration(this,((LinearLayoutManager) layoutManager).getOrientation()));
+        recycler_all_user.addItemDecoration(new DividerItemDecoration(this, ((LinearLayoutManager) layoutManager).getOrientation()));
 
-        friend_request_empty=(TextView)findViewById(R.id.friend_request_list_is_empty);
+        friend_request_empty = (TextView) findViewById(R.id.friend_request_list_is_empty);
         firebaseLoadDone = this;
+
         loadFriendRequestList();
 
-        //loadSearchData();
     }
-
-
 
     private void loadFriendRequestList() {
 
-
-
         Query query = FirebaseDatabase.getInstance().getReference().child(Commonx.USER_INFORMATION)
-                .child(Commonx.loggedUser.getUid())
-                .child(Commonx.FRIEND_REQUEST);
-        FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
-                .setQuery(query,User.class)
-                .build();
+            .child(Commonx.loggedUser.getUid())
+            .child(Commonx.FRIEND_REQUEST);
 
+        FirebaseRecyclerOptions < User > options = new FirebaseRecyclerOptions.Builder < User > ()
+            .setQuery(query, User.class)
+            .build();
 
-
-        adapter = new FirebaseRecyclerAdapter<User, FriendRequestViewHolder>(options) {
-
-
+        adapter = new FirebaseRecyclerAdapter < User, FriendRequestViewHolder > (options) {
 
             @Override
             protected void onBindViewHolder(@NonNull final FriendRequestViewHolder friendRequestViewHolder, int i, @NonNull final User user) {
 
 
-                if(getItemCount()>0){
+                if (getItemCount() > 0) {
                     friend_request_empty.setText("You have new friend requests");
                 }
 
@@ -154,7 +93,7 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
                 newxo.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot userx : dataSnapshot.getChildren()) {
+                        for (DataSnapshot userx: dataSnapshot.getChildren()) {
 
                             if (userx.child("image").exists()) {
                                 Picasso.get().load(userx.child("image").getValue().toString()).into(friendRequestViewHolder.friend_request_image);
@@ -175,8 +114,8 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
                 friendRequestViewHolder.btn_accept.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(FriendRequestActivity.this, "User "+user.getEmail()+" added to your friend list", Toast.LENGTH_SHORT).show();
-                        deleteFriendRequest(user,true);
+                        Toast.makeText(FriendRequestActivity.this, "User " + user.getEmail() + " added to your friend list", Toast.LENGTH_SHORT).show();
+                        deleteFriendRequest(user, true);
                         addToAcceptList(user);
                         addUserToFriendContact(user);
                     }
@@ -188,9 +127,8 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
                         //remove friend request
                         //Toast.makeText(FriendRequestActivity.this, "Friend request declined", Toast.LENGTH_SHORT).show();
 
-                        deleteFriendRequest_2(user,true);
-                        startActivity(new Intent(FriendRequestActivity.this,HomeActivity.class
-                        ));
+                        deleteFriendRequest_2(user, true);
+                        startActivity(new Intent(FriendRequestActivity.this, HomeActivity.class));
                     }
                 });
 
@@ -202,14 +140,14 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
             @Override
             public FriendRequestViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View itemView = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.layout_friend_request,parent,false);
+                    .inflate(R.layout.layout_friend_request, parent, false);
 
                 return new FriendRequestViewHolder(itemView);
             }
 
 
         };
-        
+
         adapter.startListening();
         recycler_all_user.setAdapter(adapter);
 
@@ -222,9 +160,9 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
         //request sent info
 
         DatabaseReference acceptList = FirebaseDatabase.getInstance()
-                .getReference(Commonx.USER_INFORMATION)
-                .child(user.getUid())
-                .child(Commonx.ACCEPT_LIST);
+            .getReference(Commonx.USER_INFORMATION)
+            .child(user.getUid())
+            .child(Commonx.ACCEPT_LIST);
 
         acceptList.child(Commonx.loggedUser.getUid()).setValue(Commonx.loggedUser); //Commonx.loggedUser.getUid()--->user.getUid()
 
@@ -236,61 +174,56 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
         //request got info
 
         DatabaseReference acceptList = FirebaseDatabase.getInstance()
-                .getReference(Commonx.USER_INFORMATION)
-                .child(Commonx.loggedUser.getUid())
-                .child(Commonx.ACCEPT_LIST);
+            .getReference(Commonx.USER_INFORMATION)
+            .child(Commonx.loggedUser.getUid())
+            .child(Commonx.ACCEPT_LIST);
 
         acceptList.child(user.getUid()).setValue(user);
     }
 
-    private void deleteFriendRequest(final User user,final boolean isShowMessage) {
+    private void deleteFriendRequest(final User user, final boolean isShowMessage) {
 
 
 
-        DatabaseReference friendRequest= FirebaseDatabase.getInstance()
-                .getReference(Commonx.USER_INFORMATION)
-                .child(Commonx.loggedUser.getUid())
-                .child(Commonx.FRIEND_REQUEST);
+        DatabaseReference friendRequest = FirebaseDatabase.getInstance()
+            .getReference(Commonx.USER_INFORMATION)
+            .child(Commonx.loggedUser.getUid())
+            .child(Commonx.FRIEND_REQUEST);
         friendRequest.child(user.getUid()).removeValue();
 
-        DatabaseReference friendRequest_remove_from_both= FirebaseDatabase.getInstance()
-                .getReference(Commonx.USER_INFORMATION)
-                .child(user.getUid())
-                .child(Commonx.FRIEND_REQUEST);
+        DatabaseReference friendRequest_remove_from_both = FirebaseDatabase.getInstance()
+            .getReference(Commonx.USER_INFORMATION)
+            .child(user.getUid())
+            .child(Commonx.FRIEND_REQUEST);
         friendRequest_remove_from_both.child(Commonx.loggedUser.getUid()).removeValue();
 
 
     }
 
-    private void deleteFriendRequest_2(final User user,final boolean isShowMessage) {
+    private void deleteFriendRequest_2(final User user, final boolean isShowMessage) {
 
-
-
-        DatabaseReference friendRequest= FirebaseDatabase.getInstance()
-                .getReference(Commonx.USER_INFORMATION)
-                .child(Commonx.loggedUser.getUid())
-                .child(Commonx.FRIEND_REQUEST);
+        DatabaseReference friendRequest = FirebaseDatabase.getInstance()
+            .getReference(Commonx.USER_INFORMATION)
+            .child(Commonx.loggedUser.getUid())
+            .child(Commonx.FRIEND_REQUEST);
         friendRequest.child(user.getUid()).removeValue()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
+            .addOnSuccessListener(new OnSuccessListener < Void > () {
+                @Override
+                public void onSuccess(Void aVoid) {
 
-                        if(isShowMessage)
-                            Toast.makeText(FriendRequestActivity.this, "Friend request has been removed!", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
+                    if (isShowMessage)
+                        Toast.makeText(FriendRequestActivity.this, "Friend request has been removed!", Toast.LENGTH_SHORT).show();
+                }
+            });
 
     }
-
-
 
     @Override
     protected void onStop() {
 
-        if(adapter!=null)
+        if (adapter != null)
             adapter.stopListening();
-        if(searchAdapter!=null)
+        if (searchAdapter != null)
             searchAdapter.stopListening();
         super.onStop();
     }
@@ -298,15 +231,15 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
     private void loadSearchData() {
 
 
-        final List<String> lsUserEmail = new ArrayList<>();
-        DatabaseReference userList =FirebaseDatabase.getInstance().getReference().child(Commonx.USER_INFORMATION)
-                .child(Commonx.loggedUser.getUid())
-                .child(Commonx.FRIEND_REQUEST);
+        final List < String > lsUserEmail = new ArrayList < > ();
+        DatabaseReference userList = FirebaseDatabase.getInstance().getReference().child(Commonx.USER_INFORMATION)
+            .child(Commonx.loggedUser.getUid())
+            .child(Commonx.FRIEND_REQUEST);
         userList.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot userSnapShot:dataSnapshot.getChildren()){
-                    User user=userSnapShot.getValue(User.class);
+                for (DataSnapshot userSnapShot: dataSnapshot.getChildren()) {
+                    User user = userSnapShot.getValue(User.class);
                     lsUserEmail.add(user.getEmail());
                 }
                 firebaseLoadDone.onFirebaseLoadUserNameDone(lsUserEmail);
@@ -319,11 +252,11 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
             }
         });
 
-        
+
     }
 
     @Override
-    public void onFirebaseLoadUserNameDone(List<String> lstEmail) {
+    public void onFirebaseLoadUserNameDone(List < String > lstEmail) {
 
         searchBar.setLastSuggestions((lstEmail));
 

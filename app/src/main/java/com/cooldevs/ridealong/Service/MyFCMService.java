@@ -30,24 +30,18 @@ public class MyFCMService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-        if(remoteMessage.getData()!=null){
+        if (remoteMessage.getData() != null) {
 
-            if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
                 sendNotificationWithChannel(remoteMessage);
 
             else
                 sendNotification(remoteMessage);
-
-
-
-            //addRequestToUserInformation(remoteMessage.getData());
-
         }
-
 
     }
 
-    private void addRequestToUserInformation(Map<String, String> data) {
+    private void addRequestToUserInformation(Map < String, String > data) {
 
         DatabaseReference fr = FirebaseDatabase.getInstance().getReference(Commonx.USER_INFORMATION).child(data.get(Commonx.TO_UID)).child(Commonx.FRIEND_REQUEST);
         User userx = new User();
@@ -58,33 +52,31 @@ public class MyFCMService extends FirebaseMessagingService {
 
     }
 
-
     private void sendNotification(RemoteMessage remoteMessage) {
 
-        Map<String, String> data = remoteMessage.getData();
+        Map < String, String > data = remoteMessage.getData();
         String title = "Friend Requests";
-        String content = "New friend request from "+data.get(Commonx.FROM_NAME);
+        String content = "New friend request from " + data.get(Commonx.FROM_NAME);
 
         Uri defaultsound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setContentTitle(title)
-                .setContentText(content)
-                .setSound(defaultsound)
-                .setAutoCancel(false);
+            .setSmallIcon(R.mipmap.ic_launcher_round)
+            .setContentTitle(title)
+            .setContentText(content)
+            .setSound(defaultsound)
+            .setAutoCancel(false);
 
-        NotificationManager manager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        manager.notify(new Random().nextInt(),builder.build());
-
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(new Random().nextInt(), builder.build());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void sendNotificationWithChannel(RemoteMessage remoteMessage) {
 
-        Map<String, String> data = remoteMessage.getData();
+        Map < String, String > data = remoteMessage.getData();
         String title = "Friend Request";
-        String content = "New friend request from "+data.get(Commonx.FROM_NAME);
+        String content = "New friend request from " + data.get(Commonx.FROM_NAME);
 
 
         NotificationHelper helper;
@@ -92,19 +84,19 @@ public class MyFCMService extends FirebaseMessagingService {
 
         Uri defaultsound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         helper = new NotificationHelper(this);
-        builder = helper.getLocationTrackerNotification(title,content,defaultsound);
+        builder = helper.getLocationTrackerNotification(title, content, defaultsound);
 
-        helper.getManager().notify(new Random().nextInt(),builder.build());
+        helper.getManager().notify(new Random().nextInt(), builder.build());
     }
 
     @Override
     public void onNewToken(String s) {
         super.onNewToken(s);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user!=null){
+        if (user != null) {
 
-            final DatabaseReference tokens= FirebaseDatabase.getInstance()
-                    .getReference(Commonx.TOKENS);
+            final DatabaseReference tokens = FirebaseDatabase.getInstance()
+                .getReference(Commonx.TOKENS);
             tokens.child(user.getUid()).setValue(s);
         }
     }

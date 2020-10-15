@@ -50,7 +50,6 @@ public class TrackingActivity extends FragmentActivity implements OnMapReadyCall
 
         trackingUserLocation.addValueEventListener(this);
 
-
     }
 
     @Override
@@ -75,6 +74,7 @@ public class TrackingActivity extends FragmentActivity implements OnMapReadyCall
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -82,8 +82,6 @@ public class TrackingActivity extends FragmentActivity implements OnMapReadyCall
         // enable zoom ui
 
         mMap.getUiSettings().setZoomControlsEnabled(true);
-
-        //set skin
 
         boolean success = googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this,R.raw.my_uber_style));
 

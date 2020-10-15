@@ -22,7 +22,7 @@ import com.cooldevs.ridealong.Interface.IRecycItemListerner;
 import com.cooldevs.ridealong.Model.MyResponse;
 import com.cooldevs.ridealong.Model.Request;
 import com.cooldevs.ridealong.Model.User;
-import com.cooldevs.ridealong.Remote.IFCMService;
+import com.cooldevs.ridealong.Remote.FBMessenger;
 import com.cooldevs.ridealong.Utils.Commonx;
 import com.cooldevs.ridealong.ViewHolder.UserViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -58,9 +58,8 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     MaterialSearchBar searchBar;
     List<String> suggestList = new ArrayList<>();
 
-    IFCMService ifcmService;
+    FBMessenger fbmessenger;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
-
 
 
     @Override
@@ -68,11 +67,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_people);
 
-        //Init API
-
-        ifcmService = Commonx.getFCMService();
-
-        //Init View
+        fbmessenger = Commonx.getFBService();
 
         searchBar = (MaterialSearchBar) findViewById(R.id.m_search_bar);
         searchBar.setCardViewElevation(5);
@@ -98,10 +93,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
             @Override
             public void afterTextChanged(Editable editable) {
 
-
-
             }
-
 
         });
         searchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
@@ -299,7 +291,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
 
                             //send data
 
-                            compositeDisposable.add(ifcmService.sendFriendRequestToUser(request)
+                            compositeDisposable.add(fbmessenger.sendFriendRequestToUser(request)
                                     .subscribeOn(Schedulers.io())
                                     .observeOn(AndroidSchedulers.mainThread())
                                     .subscribe(new Consumer<MyResponse>() {

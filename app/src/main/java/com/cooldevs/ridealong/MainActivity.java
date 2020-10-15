@@ -51,12 +51,10 @@ import com.cooldevs.ridealong.R;
 public class MainActivity extends AppCompatActivity {
 
     DatabaseReference user_informations;
-    private static final int MY_REQUEST_CODE=1506;
+    private static final int MY_REQUEST_CODE = 1506;
     private MyInternetConnectionReceiver myInternetConnectionReceiver;
-    List<AuthUI.IdpConfig> providers;
+    List < AuthUI.IdpConfig > providers;
     ProgressBar progressBar;
-
-
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -65,31 +63,26 @@ public class MainActivity extends AppCompatActivity {
 
         Paper.init(this);
 
-        //animate
-        progressBar=(ProgressBar)findViewById(R.id.progress_bar_main);
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar_main);
         progressBar.setVisibility(View.VISIBLE);
 
-        //Firebase initialization
-        user_informations= FirebaseDatabase.getInstance().getReference(Commonx.USER_INFORMATION);
+        user_informations = FirebaseDatabase.getInstance().getReference(Commonx.USER_INFORMATION);
 
-        //provider initialization
         providers = Arrays.asList(
 
-                new AuthUI.IdpConfig.GoogleBuilder().build()
+            new AuthUI.IdpConfig.GoogleBuilder().build()
         );
 
-        //internet connection checker
         myInternetConnectionReceiver = new MyInternetConnectionReceiver();
 
-
         Dexter.withActivity(this).withPermissions(Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE).withListener(new MultiplePermissionsListener() {
+            Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE).withListener(new MultiplePermissionsListener() {
             @Override
             public void onPermissionsChecked(MultiplePermissionsReport report) {
 
-                if( report.areAllPermissionsGranted()){
-                showSignInOPtions();}
-
+                if (report.areAllPermissionsGranted()) {
+                    showSignInOptions();
+                } 
                 else {
 
                     Toast.makeText(MainActivity.this, "Please allow all the permissions", Toast.LENGTH_SHORT).show();
@@ -99,28 +92,21 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-
             @Override
-            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+            public void onPermissionRationaleShouldBeShown(List < PermissionRequest > permissions, PermissionToken token) {
 
                 token.continuePermissionRequest();
-
             }
-
 
         }).check();
 
-
     }
 
-
-
-    private void showSignInOPtions() {
-
+    private void showSignInOptions() {
 
         startActivityForResult(AuthUI.getInstance()
-        .createSignInIntentBuilder().setAvailableProviders(providers)
-                .build(),MY_REQUEST_CODE);
+            .createSignInIntentBuilder().setAvailableProviders(providers)
+            .build(), MY_REQUEST_CODE);
 
     }
 
@@ -128,92 +114,85 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode==MY_REQUEST_CODE){
+        if (requestCode == MY_REQUEST_CODE) {
 
 
             IdpResponse response = IdpResponse.fromResultIntent(data);
 
-            if(resultCode == RESULT_OK){
+            if (resultCode == RESULT_OK) {
                 final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
                 //checks whether user exist
                 user_informations.orderByKey()
-                        .equalTo(firebaseUser.getUid())
-                        .addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if(dataSnapshot.getValue()==null){
+                    .equalTo(firebaseUser.getUid())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.getValue() == null) {
 
-                                    if(!dataSnapshot.child(firebaseUser.getUid()).exists()){
+                                if (!dataSnapshot.child(firebaseUser.getUid()).exists()) {
 
-                                        Commonx.loggedUser= new User(firebaseUser.getUid(),firebaseUser.getEmail());
-                                        //add to firebase
-                                        user_informations.child(Commonx.loggedUser.getUid())
-                                                .setValue(Commonx.loggedUser);
-                                    }
+                                    Commonx.loggedUser = new User(firebaseUser.getUid(), firebaseUser.getEmail());
+                                    //add to firebase
+                                    user_informations.child(Commonx.loggedUser.getUid())
+                                        .setValue(Commonx.loggedUser);
                                 }
-                                else //if user is available
-                                {
-                                    Commonx.loggedUser = dataSnapshot.child(firebaseUser.getUid()).getValue(User.class);
-                                }
-
-                                //saving UID to storage to update location background
-
-                                Paper.book().write(Commonx.USER_UID_SAVE_KEY,Commonx.loggedUser.getUid());
-                                updateToken(firebaseUser);
-                                setupUI();
+                            } else //if user is available
+                            {
+                                Commonx.loggedUser = dataSnapshot.child(firebaseUser.getUid()).getValue(User.class);
                             }
 
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                            //saving UID to storage to update location background
 
-                            }
-                        });
+                            Paper.book().write(Commonx.USER_UID_SAVE_KEY, Commonx.loggedUser.getUid());
+                            updateToken(firebaseUser);
+                            setupUI();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
 
             }
         }
     }
 
     private void setupUI() {
-
-        //Go to HOme
-        startActivity(new Intent(MainActivity.this,HomeActivity.class));
+        startActivity(new Intent(MainActivity.this, HomeActivity.class));
         finish();
     }
 
     private void updateToken(final FirebaseUser firebaseUser) {
 
-        final DatabaseReference tokens=FirebaseDatabase.getInstance()
-                .getReference(Commonx.TOKENS);
+        final DatabaseReference tokens = FirebaseDatabase.getInstance()
+            .getReference(Commonx.TOKENS);
 
-        //get Toekn
         FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
-                    @Override
-                    public void onSuccess(InstanceIdResult instanceIdResult) {
-                        tokens.child(firebaseUser.getUid())
-                                .setValue(instanceIdResult.getToken());
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MainActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+            .addOnSuccessListener(new OnSuccessListener < InstanceIdResult > () {
+                @Override
+                public void onSuccess(InstanceIdResult instanceIdResult) {
+                    tokens.child(firebaseUser.getUid())
+                        .setValue(instanceIdResult.getToken());
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(MainActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
     }
 
-//internet connection checker
+    //internet connection checker
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Create an IntentFilter instance.
         IntentFilter intentFilter = new IntentFilter();
 
-        // Add network connectivity change action.
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
 
-        // Register the broadcast receiver with the intent filter object.
         registerReceiver(myInternetConnectionReceiver, intentFilter);
 
     }
@@ -239,24 +218,12 @@ public class MainActivity extends AppCompatActivity {
     private void showMsgBar(boolean isConnected) {
 
         if (isConnected) {
-            /*Snackbar snackbar = Snackbar.make(
-                    getWindow().getDecorView().getRootView(),
-                    "Connected to internet",
-                    Snackbar.LENGTH_LONG);
-            snackbar.setActionTextColor(Color.WHITE);
-            View snackbarView = snackbar.getView();
-            snackbarView.setBackgroundColor(Color.GREEN);
-            snackbar.show();*/
 
-
-
-  //Snackbar.make(getWindow().getDecorView().getRootView(), "Connected to internet", Snackbar.LENGTH_LONG).show();
-
-        }
-        else { Snackbar snackbar = Snackbar.make(
-                    getWindow().getDecorView().getRootView(),
-                    "No internet connection",
-                    Snackbar.LENGTH_INDEFINITE);
+        } else {
+            Snackbar snackbar = Snackbar.make(
+                getWindow().getDecorView().getRootView(),
+                "No internet connection",
+                Snackbar.LENGTH_INDEFINITE);
             snackbar.setActionTextColor(Color.WHITE);
             View snackbarView = snackbar.getView();
             snackbarView.setBackgroundColor(Color.RED);
@@ -267,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        }
+    }
 
 
 

@@ -6,8 +6,17 @@ https://easyappicon.com/
 https://github.com/shobhitpuri/custom-google-signin-button
 https://developer.android.com/guide/topics/ui/layout/recyclerview
 https://github.com/ayush675/ServiceApp/blob/master/app/src/main/java/e/piyush/serviceapp/Servicess/MyFCMService.java -- notifications
-https://www.youtube.com/watch?v=hyi4dLyPtpI&ab_channel=ProgrammerWorld -- main start
-https://www.youtube.com/watch?v=B_nWgtj25Rk&ab_channel=ProgrammingExperts -- nav help and refer to for sending code 
+https://www.youtube.com/watch?v=hyi4dLyPtpI&ab_channel=ProgrammerWorld                                               -- main start
+https://www.youtube.com/watch?v=B_nWgtj25Rk&ab_channel=ProgrammingExperts                                            -- nav help and refer to for sending code 
+https://pub.dev/documentation/flutter_android/latest/android_location/Location-class.html                            -- locations
+https://developer.huawei.com/consumer/en/doc/HMS-Plugin-References-V1/hw_location-0000001050142357-V1                -- locations
+https://stackoverflow.com/questions/17599450/how-to-inflate-view-inside-fragment                                     -- gallery fragment
+https://firebase.google.com/docs/reference/js/firebase.database.Query                                                -- friendrequest
+https://developers.google.com/android/reference/com/google/android/gms/location/LocationRequest                      -- locations
+https://firebase.google.com/docs/auth/android/firebaseui                                                             -- signin w/ GSSO and firebase
+https://stackoverflow.com/questions/57079273/android-studios-default-mapsactivity-code-does-not-work                 -- tracking
+https://stackoverflow.com/questions/61972598/reference-firebasedatabase-getinstance-getreferenceusers-childuserid    -- user profile
+
 
 ## SETUP
 1. Connect Firebase with google-services.json file

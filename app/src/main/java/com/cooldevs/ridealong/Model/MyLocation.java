@@ -2,17 +2,21 @@ package com.cooldevs.ridealong.Model;
 
 public class MyLocation {
 
-    private int accuracy,altitude,bearing, bearingAccuracyDegrees,speed,speedAccuracyMetersPerSecond,
-    verticalAccuracyMeters;
-
-    private boolean complete,fromMockProvider;
+    private int accuracy;
+    private int altitude;
+    private int bearing;
+    private int bearingAccuracyDegrees ;
+    private int speed;
+    private int speedAccuracyMetersPerSecond;
+    private int verticalAccuracyMeters;
+    private boolean complete;
+    private boolean fromMockProvider;
     private String provider;
     private long time, elapsedRealTimeNanos;
-    private double latitude,longitude;
+    private double latitude, longitude;
 
 
-    public MyLocation() {
-    }
+    public MyLocation() {  }
 
     public int getAccuracy() {
         return accuracy;

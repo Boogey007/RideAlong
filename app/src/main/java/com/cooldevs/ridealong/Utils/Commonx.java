@@ -1,6 +1,6 @@
 package com.cooldevs.ridealong.Utils;
 
-import com.cooldevs.ridealong.Remote.IFCMService;
+import com.cooldevs.ridealong.Remote.FBMessenger;
 import com.cooldevs.ridealong.Remote.RetrofitClient;
 
 import java.sql.Timestamp;
@@ -27,17 +27,15 @@ public class Commonx {
     public static User userProfile;
 
 
-    public static IFCMService getFCMService(){
+    public static FBMessenger getFBService(){
 
         return RetrofitClient.getClient("https://fcm.googleapis.com/")
-                .create(IFCMService.class);
+                .create(FBMessenger.class);
     }
 
     public static Date convertTimeStampToDate(long time){
 
         return new Date(new Timestamp(time).getTime());
-
-
     }
 
     public static String getDateFormatted(Date date){

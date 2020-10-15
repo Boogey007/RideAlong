@@ -27,8 +27,5 @@ public class FriendRequestViewHolder extends RecyclerView.ViewHolder  {
         btn_decline=(ImageView) itemView.findViewById(R.id.btn_decline);
         friend_request_image=(CircleImageView)itemView.findViewById(R.id.new_friend_request_image);
 
-
     }
-
-
 }

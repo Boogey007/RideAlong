@@ -59,11 +59,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import com.cooldevs.ridealong.R;
 
 public class HomeActivity extends AppCompatActivity
-implements NavigationView.OnNavigationItemSelectedListener,
-        IFirebaseLoadDone {
-  FirebaseRecyclerAdapter <User,
-          AllFriendViewHolder> adapter,
-  searchAdapter;
+implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
+
+  FirebaseRecyclerAdapter <User, AllFriendViewHolder> adapter, searchAdapter;
   RecyclerView recycler_friend_list;
   IFirebaseLoadDone firebaseLoadDone;
   MaterialSearchBar searchBar;
@@ -81,8 +79,6 @@ implements NavigationView.OnNavigationItemSelectedListener,
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     toolbar.setTitle("Friends");
 
-    //setSupportActionBar(toolbar); //removed right side toolbar menu XD
-
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     fab.setOnClickListener(new View.OnClickListener() {@Override
       public void onClick(View view) {
@@ -91,7 +87,6 @@ implements NavigationView.OnNavigationItemSelectedListener,
 
         startActivity(new Intent(HomeActivity.this, TrackingActivity.class));
         Toast.makeText(HomeActivity.this, "Locating your current position", Toast.LENGTH_LONG).show();
-        //startActivity(new Intent(HomeActivity.this, AllPeopleActivity.class));
       }
     });
 
@@ -110,7 +105,6 @@ implements NavigationView.OnNavigationItemSelectedListener,
     TextView txt_user_logged = (TextView) headerView.findViewById(R.id.txt_logged_emaail);
     txt_user_logged.setText(Commonx.loggedUser.getEmail());
 
-    //setting up profile imageview
     CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
     Picasso.get().load(Commonx.loggedUser.getImage()).placeholder(R.drawable.ic_person_outline_black_24dp).into(profileImageView);
 
@@ -121,22 +115,22 @@ implements NavigationView.OnNavigationItemSelectedListener,
     recycler_friend_list.addItemDecoration(new DividerItemDecoration(this, ((LinearLayoutManager) layoutManager).getOrientation()));
     friend_list_empty = (TextView) findViewById(R.id.friend_list_is_empty);
 
-    //upldate location
     publicLocation = FirebaseDatabase.getInstance().getReference(Commonx.PUBLIC_LOCATION);
     updateLocation();
 
     LoadFriends();
-
   }
 
   private void LoadFriends() {
+
     // Need to make this to where it can be code specific somehow to not show everyone
     Query query = FirebaseDatabase.getInstance().getReference(Commonx.USER_INFORMATION).child(Commonx.loggedUser.getUid()).child(Commonx.ACCEPT_LIST);
 
     FirebaseRecyclerOptions < User > options = new FirebaseRecyclerOptions.Builder < User > ().setQuery(query, User.class).build();
 
-    adapter = new FirebaseRecyclerAdapter < User,
-    AllFriendViewHolder > (options) {@Override
+    adapter = new FirebaseRecyclerAdapter < User,AllFriendViewHolder > (options) {
+      
+      @Override
       protected void onBindViewHolder(@NonNull final AllFriendViewHolder allFriendViewHolder, int i, @NonNull final User user) {
         allFriendViewHolder.all_friends_txt_user_email.setText(new StringBuilder(user.getEmail()));
 
@@ -147,9 +141,8 @@ implements NavigationView.OnNavigationItemSelectedListener,
         newx.addValueEventListener(new ValueEventListener() {@Override
           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-            if (getItemCount() > 0) {
+            if (getItemCount() > 0) 
               friend_list_empty.setText("Click the user to locate");
-            }
 
             if (dataSnapshot.exists()) {
               for (DataSnapshot userx: dataSnapshot.getChildren()) {
@@ -165,16 +158,11 @@ implements NavigationView.OnNavigationItemSelectedListener,
           }
 
           @Override
-          public void onCancelled(@NonNull DatabaseError databaseError) {
-
-}
-
+          public void onCancelled(@NonNull DatabaseError databaseError) { }
         });
 
         allFriendViewHolder.setiRecycItemListerner(new IRecycItemListerner() {@Override
           public void onItemClickListener(View view, int position) {
-
-            //show tracking information
 
             Commonx.trackingUser = user;
 
@@ -183,7 +171,9 @@ implements NavigationView.OnNavigationItemSelectedListener,
           }
         });
 
-        allFriendViewHolder.all_friends_locate_image.setOnClickListener(new View.OnClickListener() {@Override
+        allFriendViewHolder.all_friends_locate_image.setOnClickListener(new View.OnClickListener() {
+          
+          @Override
           public void onClick(View view) {
             Commonx.userProfile = user;
             startActivity(new Intent(HomeActivity.this, UserProfileActivity.class));
@@ -206,7 +196,6 @@ implements NavigationView.OnNavigationItemSelectedListener,
 
     adapter.startListening();
     recycler_friend_list.setAdapter(adapter);
-
   }
 
   @Override
@@ -231,7 +220,6 @@ implements NavigationView.OnNavigationItemSelectedListener,
     buildLocationRequest();
     fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
     fusedLocationProviderClient.requestLocationUpdates(locationRequest, getPendingIntent());
-
   }
 
   private PendingIntent getPendingIntent() {
@@ -308,11 +296,8 @@ implements NavigationView.OnNavigationItemSelectedListener,
       Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
 
     }
-    else if (id == R.id.nav_user_settings) {
-
+    else if (id == R.id.nav_user_settings) 
       startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
-
-    }
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     drawer.closeDrawer(GravityCompat.START);
@@ -323,14 +308,11 @@ implements NavigationView.OnNavigationItemSelectedListener,
   public void onFirebaseLoadUserNameDone(List < String > lstEmail) {
 
     searchBar.setLastSuggestions((lstEmail));
-
   }
 
   @Override
   public void onFirebaseLoadFailed(String message) {
 
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-
   }
-
 }

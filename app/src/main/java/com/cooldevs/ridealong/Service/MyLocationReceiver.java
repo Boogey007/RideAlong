@@ -15,7 +15,7 @@ import com.cooldevs.ridealong.Utils.Commonx;
 
 public class MyLocationReceiver extends BroadcastReceiver {
 
-    public static final String ACTION= "com.cooldevs.ridealong.UPDATE_LOCATION";
+    public static final String ACTION = "com.cooldevs.ridealong.UPDATE_LOCATION";
 
     DatabaseReference publicLocation;
 
@@ -31,26 +31,25 @@ public class MyLocationReceiver extends BroadcastReceiver {
 
         uid = Paper.book().read(Commonx.USER_UID_SAVE_KEY);
 
-        if(intent!=null){
+        if (intent != null) {
 
             final String action = intent.getAction();
 
             if (action.equals(ACTION)) {
 
                 LocationResult result = LocationResult.extractResult(intent);
-                if(result!=null){
+                if (result != null) {
 
                     Location location = result.getLastLocation();
-                    Log.d("HEYYY", "onReceive: location" + String.valueOf(location));
-                    if(Commonx.loggedUser!=null) //foreground
+                    Log.d("PotatoSoup", "onReceive: location" + String.valueOf(location));
+                    if (Commonx.loggedUser != null)
                         publicLocation.child(Commonx.loggedUser.getUid()).setValue(location);
-                    else{
+                    else {
                         publicLocation.child(uid).setValue(location);
                     }
                 }
             }
-            }
         }
-
     }
 
+}

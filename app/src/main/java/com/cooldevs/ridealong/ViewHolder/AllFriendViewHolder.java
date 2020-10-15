@@ -23,7 +23,7 @@ public class AllFriendViewHolder extends RecyclerView.ViewHolder implements View
     public AllFriendViewHolder(@NonNull View itemView) {
         super(itemView);
 
-          all_friends_profile_image=(CircleImageView) itemView.findViewById(R.id.all_friends_profile_image);
+        all_friends_profile_image=(CircleImageView) itemView.findViewById(R.id.all_friends_profile_image);
         all_friends_locate_image=(CircleImageView) itemView.findViewById(R.id.all_friends_locate_image); //locate image means user image
 
         all_friends_txt_user_email = (TextView) itemView.findViewById(R.id.all_friends_txt_user_email);
