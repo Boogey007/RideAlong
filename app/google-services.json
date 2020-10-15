@@ -47,7 +47,7 @@
         "client_info": {
           "mobilesdk_app_id": "1:379903889313:android:a60ca238fed879b86cc5e0",
           "android_client_info": {
-            "package_name": "xyz.mmhasanovee.fnflocationtracker"
+            "package_name": "com.cooldevs.ridealong"
           }
         },
         "oauth_client": [
@@ -55,7 +55,7 @@
             "client_id": "379903889313-jidq5k72per3nbr0jlc2d27f3ovu4hdp.apps.googleusercontent.com",
             "client_type": 1,
             "android_info": {
-              "package_name": "xyz.mmhasanovee.fnflocationtracker",
+              "package_name": "com.cooldevs.ridealong",
               "certificate_hash": "d44fb7a014de7a23c61bbaaf0906502eabef668c"
             }
           },

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:orientation="vertical"
-    tools:context=".AllPeopleActivity">
+    tools:context="com.cooldevs.ridealong.AllPeopleActivity">
 
     <TextView
         android:id="@+id/friend_request_list_is_empty"

@@ -7,7 +7,7 @@
     android:padding="8dp"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context=".AllPeopleActivity">
+    tools:context="com.cooldevs.ridealong.AllPeopleActivity">
 
     <com.mancj.materialsearchbar.MaterialSearchBar
 

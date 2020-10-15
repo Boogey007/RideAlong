@@ -5,7 +5,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "xyz.mmhasanovee.fnflocationtracker"
+        applicationId "com.cooldevs.ridealong"
         minSdkVersion 22
         targetSdkVersion 29
         versionCode 4

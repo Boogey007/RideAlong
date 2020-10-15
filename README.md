@@ -5,10 +5,13 @@ https://github.com/mapbox/mapbox-voice-runtime-demo/blob/master/app/src/main/res
 https://easyappicon.com/
 https://github.com/shobhitpuri/custom-google-signin-button
 https://developer.android.com/guide/topics/ui/layout/recyclerview
+https://github.com/ayush675/ServiceApp/blob/master/app/src/main/java/e/piyush/serviceapp/Servicess/MyFCMService.java -- notifications
+https://www.youtube.com/watch?v=hyi4dLyPtpI&ab_channel=ProgrammerWorld -- main start
+https://www.youtube.com/watch?v=B_nWgtj25Rk&ab_channel=ProgrammingExperts -- nav help and refer to for sending code 
 
 ## SETUP
 1. Connect Firebase with google-services.json file
-2. Connect with your Google Maps api with google_maps_api.xml
+2. Connect with your Google Maps api with pgoogle_maps_api.xml
 3. Connect with Firebase Cloud Messaging with Authorization:key= longkey
 
 ## Features

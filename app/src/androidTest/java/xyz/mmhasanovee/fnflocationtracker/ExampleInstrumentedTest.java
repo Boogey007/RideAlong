@@ -1,4 +1,4 @@
-package xyz.mmhasanovee.fnflocationtracker;
+package com.cooldevs.ridealong;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("xyz.mmhasanovee.fnflocationtracker", appContext.getPackageName());
+        assertEquals("com.cooldevs.ridealong", appContext.getPackageName());
     }
 }

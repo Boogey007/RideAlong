@@ -1,4 +1,4 @@
-package xyz.mmhasanovee.fnflocationtracker;
+package com.cooldevs.ridealong;
 
 import org.junit.Test;
 
