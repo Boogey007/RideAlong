@@ -48,6 +48,9 @@
         <receiver android:name="com.cooldevs.ridealong.Service.MyLocationReceiver" />
 
         <activity android:name="com.cooldevs.ridealong.AllPeopleActivity" />
+        <activity android:name="com.cooldevs.ridealong.AddCarActivity" />
+        <activity android:name="com.cooldevs.ridealong.CarsActivity" />
+        <activity android:name="com.cooldevs.ridealong.LocationsActivity" />
         <activity
             android:name="com.cooldevs.ridealong.HomeActivity"
             android:label="@string/title_activity_home"

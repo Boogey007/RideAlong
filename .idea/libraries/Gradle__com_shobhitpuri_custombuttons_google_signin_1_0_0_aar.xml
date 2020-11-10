@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.shobhitpuri.custombuttons:google-signin:1.0.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3dde0f2f9ba9a9066a4ea5d457fd5e9f/jetified-google-signin-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3dde0f2f9ba9a9066a4ea5d457fd5e9f/jetified-google-signin-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3dde0f2f9ba9a9066a4ea5d457fd5e9f/jetified-google-signin-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3c141ea6894fc85d988588da2dc3876a/jetified-google-signin-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3c141ea6894fc85d988588da2dc3876a/jetified-google-signin-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3c141ea6894fc85d988588da2dc3876a/jetified-google-signin-1.0.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.shobhitpuri.custombuttons/google-signin/1.0.0/ac1c7549c9ddc4ddc04f41f9b3ee393c0cedca00/google-signin-1.0.0-javadoc.jar!/" />

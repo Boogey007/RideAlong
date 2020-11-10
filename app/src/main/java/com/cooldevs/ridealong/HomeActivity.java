@@ -1,7 +1,9 @@
 package com.cooldevs.ridealong;
 
+import android.Manifest;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.cooldevs.ridealong.Interface.IFirebaseLoadDone;
@@ -26,6 +28,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 
 import com.google.android.material.navigation.NavigationView;
@@ -59,13 +62,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import com.cooldevs.ridealong.R;
 
 public class HomeActivity extends AppCompatActivity
-implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
+        implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
 
-  FirebaseRecyclerAdapter <User, AllFriendViewHolder> adapter, searchAdapter;
+  FirebaseRecyclerAdapter<User, AllFriendViewHolder> adapter, searchAdapter;
   RecyclerView recycler_friend_list;
   IFirebaseLoadDone firebaseLoadDone;
   MaterialSearchBar searchBar;
-  List < String > suggestList = new ArrayList < >();
+  List<String> suggestList = new ArrayList<>();
   DatabaseReference publicLocation;
   LocationRequest locationRequest;
   FusedLocationProviderClient fusedLocationProviderClient;
@@ -80,7 +83,8 @@ implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
     toolbar.setTitle("Friends");
 
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {@Override
+    fab.setOnClickListener(new View.OnClickListener() {
+      @Override
       public void onClick(View view) {
 
         Commonx.trackingUser = Commonx.loggedUser;
@@ -92,7 +96,7 @@ implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawer.addDrawerListener(toggle);
     toggle.syncState();
 
@@ -126,10 +130,10 @@ implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
     // Need to make this to where it can be code specific somehow to not show everyone
     Query query = FirebaseDatabase.getInstance().getReference(Commonx.USER_INFORMATION).child(Commonx.loggedUser.getUid()).child(Commonx.ACCEPT_LIST);
 
-    FirebaseRecyclerOptions < User > options = new FirebaseRecyclerOptions.Builder < User > ().setQuery(query, User.class).build();
+    FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>().setQuery(query, User.class).build();
 
-    adapter = new FirebaseRecyclerAdapter < User,AllFriendViewHolder > (options) {
-      
+    adapter = new FirebaseRecyclerAdapter<User, AllFriendViewHolder>(options) {
+
       @Override
       protected void onBindViewHolder(@NonNull final AllFriendViewHolder allFriendViewHolder, int i, @NonNull final User user) {
         allFriendViewHolder.all_friends_txt_user_email.setText(new StringBuilder(user.getEmail()));
@@ -138,14 +142,15 @@ implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
 
         Query newx = referencex.orderByChild("uid").equalTo(user.getUid());
 
-        newx.addValueEventListener(new ValueEventListener() {@Override
+        newx.addValueEventListener(new ValueEventListener() {
+          @Override
           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-            if (getItemCount() > 0) 
+            if (getItemCount() > 0)
               friend_list_empty.setText("Click the user to locate");
 
             if (dataSnapshot.exists()) {
-              for (DataSnapshot userx: dataSnapshot.getChildren()) {
+              for (DataSnapshot userx : dataSnapshot.getChildren()) {
 
                 if (userx.child("image").exists()) {
                   Picasso.get().load(userx.child("image").getValue().toString()).into(allFriendViewHolder.all_friends_profile_image);
@@ -158,10 +163,12 @@ implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
           }
 
           @Override
-          public void onCancelled(@NonNull DatabaseError databaseError) { }
+          public void onCancelled(@NonNull DatabaseError databaseError) {
+          }
         });
 
-        allFriendViewHolder.setiRecycItemListerner(new IRecycItemListerner() {@Override
+        allFriendViewHolder.setiRecycItemListerner(new IRecycItemListerner() {
+          @Override
           public void onItemClickListener(View view, int position) {
 
             Commonx.trackingUser = user;
@@ -172,7 +179,7 @@ implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
         });
 
         allFriendViewHolder.all_friends_locate_image.setOnClickListener(new View.OnClickListener() {
-          
+
           @Override
           public void onClick(View view) {
             Commonx.userProfile = user;
@@ -181,14 +188,16 @@ implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
         });
       }
 
-      @NonNull@Override
+      @NonNull
+      @Override
       public AllFriendViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_all_friends, parent, false);
 
         return new AllFriendViewHolder(itemView);
       }
 
-      @NonNull@Override
+      @NonNull
+      @Override
       public User getItem(int position) {
         return super.getItem(position);
       }
@@ -219,6 +228,16 @@ implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
 
     buildLocationRequest();
     fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+      // TODO: Consider calling
+      //    ActivityCompat#requestPermissions
+      // here to request the missing permissions, and then overriding
+      //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+      //                                          int[] grantResults)
+      // to handle the case where the user grants the permission. See the documentation
+      // for ActivityCompat#requestPermissions for more details.
+      return;
+    }
     fusedLocationProviderClient.requestLocationUpdates(locationRequest, getPendingIntent());
   }
 
@@ -278,7 +297,12 @@ implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
       Intent showfriendreq = new Intent(HomeActivity.this, FriendRequestActivity.class);
       startActivity(showfriendreq);
 
-    } else if (id == R.id.nav_sign_out) {
+    } else if (id == R.id.nav_cars) {
+      Intent Cars = new Intent(HomeActivity.this, CarsActivity.class);
+      startActivity(Cars);
+
+    }
+    else if (id == R.id.nav_sign_out) {
 
       Commonx.loggedUser = null;
 
