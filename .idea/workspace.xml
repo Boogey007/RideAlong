@@ -13,14 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3435dd2-630a-4f9e-9de7-a76006d2ccf9" name="Default Changelist" comment="Car Parking">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/AddCarActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/CarsActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/LocationsActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_addcar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cars.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_location.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_auth_4_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_auth_4_3_1_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_common_4_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_common_4_3_1_aar.xml" afterDir="false" />
@@ -48,14 +41,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_storage_16_0_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_storage_16_0_4_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_shobhitpuri_custombuttons_google_signin_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_shobhitpuri_custombuttons_google_signin_1_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/HomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/AddCarActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/AddCarActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/CarsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/CarsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/LocationsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/LocationsActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/Utils/Commonx.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cooldevs/ridealong/Utils/Commonx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_home_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_home_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_location.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_location.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,34 +225,34 @@
       <screen x="1920" y="-3" width="1920" height="1040" />
     </state>
     <state x="2660" y="272" key="FileChooserDialogImpl/-3840.14.2194.1211/0.0.1920.1040/1920.-3.1920.1040@1920.-3.1920.1040" timestamp="1602635126688" />
-    <state width="1398" height="207" key="GridCell.Tab.0.bottom" timestamp="1604850834959">
+    <state width="1398" height="207" key="GridCell.Tab.0.bottom" timestamp="1605834740352">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="773" height="282" key="GridCell.Tab.0.bottom/-3840.14.2194.1211/0.0.1920.1040/1920.-3.1920.1040@0.0.1920.1040" timestamp="1602644726043" />
     <state width="1421" height="157" key="GridCell.Tab.0.bottom/-3840.14.2194.1211/0.0.1920.1040/1920.-3.1920.1040@1920.-3.1920.1040" timestamp="1602706638938" />
-    <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1604850834959" />
-    <state width="1398" height="207" key="GridCell.Tab.0.center" timestamp="1604850834958">
+    <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1605834740352" />
+    <state width="1398" height="207" key="GridCell.Tab.0.center" timestamp="1605834740352">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="773" height="282" key="GridCell.Tab.0.center/-3840.14.2194.1211/0.0.1920.1040/1920.-3.1920.1040@0.0.1920.1040" timestamp="1602644726043" />
     <state width="1421" height="157" key="GridCell.Tab.0.center/-3840.14.2194.1211/0.0.1920.1040/1920.-3.1920.1040@1920.-3.1920.1040" timestamp="1602706638938" />
-    <state width="1398" height="207" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1604850834958" />
-    <state width="1398" height="207" key="GridCell.Tab.0.left" timestamp="1604850834957">
+    <state width="1398" height="207" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1605834740352" />
+    <state width="1398" height="207" key="GridCell.Tab.0.left" timestamp="1605834740351">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="773" height="282" key="GridCell.Tab.0.left/-3840.14.2194.1211/0.0.1920.1040/1920.-3.1920.1040@0.0.1920.1040" timestamp="1602644726043" />
     <state width="1421" height="157" key="GridCell.Tab.0.left/-3840.14.2194.1211/0.0.1920.1040/1920.-3.1920.1040@1920.-3.1920.1040" timestamp="1602706638937" />
-    <state width="1398" height="207" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1604850834957" />
-    <state width="1398" height="207" key="GridCell.Tab.0.right" timestamp="1604850834959">
+    <state width="1398" height="207" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1605834740351" />
+    <state width="1398" height="207" key="GridCell.Tab.0.right" timestamp="1605834740352">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="773" height="282" key="GridCell.Tab.0.right/-3840.14.2194.1211/0.0.1920.1040/1920.-3.1920.1040@0.0.1920.1040" timestamp="1602644726043" />
     <state width="1421" height="157" key="GridCell.Tab.0.right/-3840.14.2194.1211/0.0.1920.1040/1920.-3.1920.1040@1920.-3.1920.1040" timestamp="1602706638938" />
-    <state width="1398" height="207" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1604850834959" />
-    <state x="369" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1604766296657">
+    <state width="1398" height="207" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1605834740352" />
+    <state x="369" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1605834728163">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
-    <state x="369" y="260" key="com.intellij.ide.util.TipDialog/0.23.1440.810@0.23.1440.810" timestamp="1604766296657" />
+    <state x="369" y="260" key="com.intellij.ide.util.TipDialog/0.23.1440.810@0.23.1440.810" timestamp="1605834728163" />
     <state x="500" y="352" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604964983338">
       <screen x="0" y="23" width="1440" height="810" />
     </state>

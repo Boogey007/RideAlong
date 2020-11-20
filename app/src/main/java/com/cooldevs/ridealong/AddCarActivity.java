@@ -54,8 +54,8 @@ public class AddCarActivity extends AppCompatActivity {
                     //String newId = car.getKey();
                     Log.d("carkey",newId);
 
-                    car.child(newId).child("latitude").setValue(37.4219983);
-                    car.child(newId).child("longitude").setValue(-122.084);
+                    car.child(newId).child("latitude").setValue(38.68);
+                    car.child(newId).child("longitude").setValue(-101.07);
                     car.child(newId).child("parkedBy").setValue("");
 
                     /*String newId = mDatabase.child("Cars").push().getKey();

@@ -42,7 +42,7 @@ public class LocationsActivity extends AppCompatActivity implements OnMapReadyCa
     //ImageButton back;
     Button park;
     TextView currentDriver;
-    TextView selectedCar;
+    TextView selectedCar, locationText;
 
     private DatabaseReference mDatabase;
     private String username;
@@ -60,6 +60,7 @@ public class LocationsActivity extends AppCompatActivity implements OnMapReadyCa
         park = findViewById(R.id.parkButton);
         currentDriver = findViewById(R.id.currentDriver);
         selectedCar = findViewById(R.id.selectedCar);
+        locationText = findViewById(R.id.carLoc);
         String carID = getIntent().getExtras().getString("car");
         username = getIntent().getExtras().getString("user");
 
@@ -75,7 +76,8 @@ public class LocationsActivity extends AppCompatActivity implements OnMapReadyCa
         car.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                selectedCar.setText(dataSnapshot.getValue().toString());
+                selectedCar.setText("Car: "+dataSnapshot.child("name").getValue().toString());
+
                 Log.d("TAGLoc",dataSnapshot.getValue().toString());
                 currentDriver.setText("Parked by: " + username);
                 Log.d("TAGUser",username);
@@ -85,6 +87,7 @@ public class LocationsActivity extends AppCompatActivity implements OnMapReadyCa
                 Double lon = (Double)dataSnapshot.child("longitude").getValue();
                 currentLocation.setLatitude(lat);
                 currentLocation.setLongitude(lon);
+                locationText.setText("Lat: "+currentLocation.getLatitude() + " " + "Long: "+currentLocation.getLongitude());
                 Toast.makeText(getApplicationContext(), currentLocation.getLatitude() + " " + currentLocation.getLongitude(), Toast.LENGTH_SHORT).show();
 
                 SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.myMap);

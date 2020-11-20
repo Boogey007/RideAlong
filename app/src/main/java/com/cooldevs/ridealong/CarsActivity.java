@@ -64,6 +64,8 @@ public class CarsActivity extends AppCompatActivity {
         //final String UserId = user.getUid();
 
 
+
+
        adapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
@@ -76,12 +78,13 @@ public class CarsActivity extends AppCompatActivity {
                 .child(Commonx.loggedUser.getUid())
                 .child(Commonx.Car);
 
-        Query loggedUser = FirebaseDatabase.getInstance()
-                .getReference(Commonx.USER_INFORMATION)
-                .child(Commonx.loggedUser.getUid()).child("email");
-        Log.d("TAG8",loggedUser.toString());
+        loggedUsername = Commonx.loggedUser.getEmail();
 
-        loggedUsername = loggedUser.toString();
+
+
+
+
+
 
 
 
@@ -92,13 +95,14 @@ public class CarsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object o = carsList.getItemAtPosition(position);
                 String str = o.toString();
-                Log.d("TAG7",loggedUsername);
+
                // *//*if(str.equals("Please Join a Family") || str.equals("Please Add a Car")){
                     Toast.makeText(CarsActivity.this, str, Toast.LENGTH_LONG).show();
                 //*//* }
                // *//*else {*//*
                     Intent i = new Intent(CarsActivity.this, LocationsActivity.class);
                     i.putExtra("car", cars1.get(str));
+                Log.d("TAG11",cars1.get(str));
                     i.putExtra("user", loggedUsername);
                     startActivity(i);
                 //}
@@ -115,7 +119,7 @@ public class CarsActivity extends AppCompatActivity {
                 //Log.d("TAG2",dataSnapshot.child(Commonx.loggedUser.getUid()).child(Commonx.Car).getChildren().toString());
 
                 //iterates through cars held in Families
-                //adapter.clear();
+                adapter.clear();
                // for(DataSnapshot ds : dataSnapshot.child("Families").child(family).child("cars").getChildren()) {
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     Log.d("TAG2",ds.toString());
