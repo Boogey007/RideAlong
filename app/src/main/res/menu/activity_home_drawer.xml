@@ -13,6 +13,12 @@
             android:id="@+id/nav_add_people"
             android:icon="@drawable/ic_person_add_black_24dp"
             android:title="New friend requests" />
+
+        <item
+            android:id="@+id/nav_cars"
+            android:icon="@drawable/ic_person_add_black_24dp"
+            android:title="Cars" />
+
         <item
             android:id="@+id/nav_user_settings"
             android:icon="@drawable/ic_settings_black_24dp"
