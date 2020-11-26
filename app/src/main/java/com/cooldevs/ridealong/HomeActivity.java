@@ -2,8 +2,14 @@ package com.cooldevs.ridealong;
 
 import android.Manifest;
 import android.app.PendingIntent;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.cooldevs.ridealong.Interface.IFirebaseLoadDone;
@@ -19,19 +25,26 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import android.provider.Settings;
+import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -51,11 +64,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -73,6 +90,13 @@ public class HomeActivity extends AppCompatActivity
   LocationRequest locationRequest;
   FusedLocationProviderClient fusedLocationProviderClient;
   TextView friend_list_empty;
+  EditText num;
+  String location_url, ph_num;
+  Button temp_btn;
+  boolean check = false;
+  FusedLocationProviderClient fusedLocationProviderClient2;
+  String current_user;
+  FirebaseUser firebaseUser;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +105,11 @@ public class HomeActivity extends AppCompatActivity
 
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     toolbar.setTitle("Friends");
+
+    fusedLocationProviderClient2 = LocationServices.getFusedLocationProviderClient(this);
+    //Get current user for verification
+    firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    current_user = firebaseUser.getEmail();
 
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     fab.setOnClickListener(new View.OnClickListener() {
@@ -123,6 +152,147 @@ public class HomeActivity extends AppCompatActivity
     updateLocation();
 
     LoadFriends();
+
+    //Emergency notifier
+    FloatingActionButton emergency_fab = (FloatingActionButton) findViewById(R.id.emergency_fab);
+    emergency_fab.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        boolean res = checkLocationPermissions();
+        if(res){
+          checkLocationPermissions();
+        }
+        else {
+          System.out.println("Sending Message!!!!!!!");
+          fetchLocation();
+        }
+      }
+    });
+  }
+
+  //Check the location permissions
+  protected boolean checkLocationPermissions(){
+    final Context context = this;
+    LocationManager lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
+    boolean gpsEnabled = false;
+    boolean networkEnabled = false;
+
+    try {
+      gpsEnabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    } catch(Exception ex) {}
+
+    try {
+      networkEnabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+    } catch(Exception ex) {}
+
+    if(!gpsEnabled && !networkEnabled) {
+      new AlertDialog.Builder(context)
+              .setMessage("Please enable GPS and Network")
+              .setPositiveButton("Open Settings", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                  context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                }
+              })
+              .setNegativeButton("Close",null)
+              .show();
+      return check = true;
+    }
+    else{
+      return check = false;
+    }
+  }
+
+  //Fetch the location to be passed with sms alert
+  protected void fetchLocation(){
+    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+      if(getApplicationContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+              == PackageManager.PERMISSION_GRANTED){
+        fusedLocationProviderClient2.getLastLocation()
+                .addOnSuccessListener(new OnSuccessListener<Location>() {
+                  @Override
+                  public void onSuccess(Location location) {
+                    if(location != null){
+                      Double latitude_cor = location.getLatitude();
+                      Double longitude_cor = location.getLongitude();
+                      location_url = "http://maps.google.com/maps?q=loc:"+latitude_cor+","+longitude_cor;
+                    }
+                  }
+                });
+        sendSms();
+      }
+      else {
+        requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+      }
+    }
+  }
+
+  //Check for the user in DB and fetch his emergency_contact_list
+  protected void sendSms(){
+    int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
+    if(permissionCheck == PackageManager.PERMISSION_GRANTED){
+      FirebaseDatabase db = FirebaseDatabase.getInstance();
+      final DatabaseReference tempRef = db.getReference("UserInformation");
+      tempRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+          for(DataSnapshot ds : dataSnapshot.getChildren()){
+            if(ds.child("email").getValue().toString().equals(current_user)) {
+              DatabaseReference current_ref = ds.child("emergency_contact_list").getRef();
+              current_ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                  for(DataSnapshot ds : dataSnapshot.getChildren()){
+                    ph_num = ds.getValue().toString();
+                    sendAlertMessage(ph_num);
+                  }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+              });
+            }
+          }
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+        }
+      });
+    }
+
+    else{
+      ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 1);
+    }
+  }
+
+  // Send sms notification
+  protected void sendAlertMessage(String phone_num){
+    String phnNo = phone_num;
+    Resources res = getResources();
+    String msg = res.getString(R.string.emergency_msg) + location_url;
+    SmsManager manager = SmsManager.getDefault();
+    manager.sendTextMessage(phnNo, null, msg, null, null);
+    Toast.makeText(getApplicationContext(), "Emergency Notification Sent!", Toast.LENGTH_LONG).show();
+  }
+
+  //Check permissions for sending sms
+  @Override
+  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+    switch (requestCode){
+      case 0:
+        if(grantResults.length>=0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+          this.sendAlertMessage(ph_num);
+        }
+        else{
+          Toast.makeText(this, "You don't have permissions.",Toast.LENGTH_LONG).show();
+        }
+    }
   }
 
   private void LoadFriends() {
@@ -323,6 +493,43 @@ public class HomeActivity extends AppCompatActivity
     else if (id == R.id.nav_user_settings) 
       startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
 
+    else if( id == R.id.add_emergency_contact)
+    {
+      final AlertDialog.Builder alert = new AlertDialog.Builder(HomeActivity.this);
+      View mView = getLayoutInflater().inflate(R.layout.add_emergency_dialog,null);
+      final EditText txt_inputText = (EditText)mView.findViewById(R.id.txt_input);
+      Button btn_cancel = (Button)mView.findViewById(R.id.btn_cancel);
+      Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
+      alert.setView(mView);
+      num = txt_inputText;
+      temp_btn = btn_okay;
+      final AlertDialog alertDialog = alert.create();
+      alertDialog.setCanceledOnTouchOutside(false);
+      btn_cancel.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          alertDialog.dismiss();
+        }
+      });
+      btn_okay.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          Pattern pattern = Pattern.compile("^[0-9]{10}$");
+          Matcher matcher = pattern.matcher(num.getText().toString());
+          boolean b = matcher.matches();
+          if(b){
+            addContact();
+            alertDialog.dismiss();
+            Toast.makeText(getApplicationContext(), "Contact Added Successfully!", Toast.LENGTH_SHORT).show();
+          }
+          else{
+            Toast.makeText(getApplicationContext(), "Invalid Number!", Toast.LENGTH_SHORT).show();
+          }
+        }
+      });
+      alertDialog.show();
+    }
+
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     drawer.closeDrawer(GravityCompat.START);
     return true;
@@ -338,5 +545,26 @@ public class HomeActivity extends AppCompatActivity
   public void onFirebaseLoadFailed(String message) {
 
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+  }
+
+  protected void addContact() {
+    FirebaseDatabase db = FirebaseDatabase.getInstance();
+    final DatabaseReference myRef = db.getReference("UserInformation");
+    myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+      @Override
+      public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+          if(ds.child("email").getValue().toString().equals(current_user)) {
+            DatabaseReference current_ref = ds.getRef();
+            current_ref.child("emergency_contact_list").push().setValue(num.getText().toString().trim());
+          }
+        }
+      }
+
+      @Override
+      public void onCancelled(@NonNull DatabaseError databaseError) {
+
+      }
+    });
   }
 }

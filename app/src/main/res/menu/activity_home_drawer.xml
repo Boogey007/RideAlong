@@ -23,6 +23,10 @@
             android:id="@+id/nav_user_settings"
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="Profile" />
+        <item
+            android:id="@+id/add_emergency_contact"
+            android:icon="@drawable/ic_person_add_black_24dp"
+            android:title="Add Emergency Contact"/>
 
     </group>
 
