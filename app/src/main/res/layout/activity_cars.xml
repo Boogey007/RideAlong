@@ -15,7 +15,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="60dp"
-        android:backgroundTint="#44B4FF"
+        android:backgroundTint="@color/colorPrimary"
         android:text="Add a New Car"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -26,7 +26,7 @@
         android:id="@+id/textView2"
         android:layout_width="411dp"
         android:layout_height="73dp"
-        android:background="#448AFF"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -35,7 +35,7 @@
         android:id="@+id/textView"
         android:layout_width="411dp"
         android:layout_height="73dp"
-        android:background="#448AFF"
+        android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +44,7 @@
         android:id="@+id/backArrowCarsButton"
         android:layout_width="50dp"
         android:layout_height="62dp"
-        android:backgroundTint="#448AFF"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"/>
         !app:srcCompat="@drawable/backarrow" />
@@ -54,22 +54,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Cars"
+        android:textColor="@color/white"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />
-
-    <ImageButton
-        android:id="@+id/settingsButton"
-        android:layout_width="58dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"/>
-        !app:srcCompat="@drawable/settings" />
 
     <ListView
         android:id="@+id/carsList"

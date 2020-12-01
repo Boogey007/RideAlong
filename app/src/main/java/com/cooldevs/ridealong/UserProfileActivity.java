@@ -57,25 +57,18 @@ public class UserProfileActivity extends AppCompatActivity {
                     if (dataSnapshot.child("image").exists()) {
                         Picasso.get().load(dataSnapshot.child("image").getValue().toString()).into(imageView);
                     }
-
                     if (dataSnapshot.child("address").exists()) {
-
                         friend_profile_address.setText(dataSnapshot.child("address").getValue().toString());
                     }
                     if (dataSnapshot.child("name").exists()) {
-
                         friend_profile_name.setText(dataSnapshot.child("name").getValue().toString());
                     }
                     if (dataSnapshot.child("phoneNumber").exists()) {
-
                         friend_profile_phone.setText(dataSnapshot.child("phoneNumber").getValue().toString());
-
                     }
 
                     if (dataSnapshot.child("email").exists()) {
-
                         friend_profile_email.setText(dataSnapshot.child("email").getValue().toString());
-
                     }
                 }
             }

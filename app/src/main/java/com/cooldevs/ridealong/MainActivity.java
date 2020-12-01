@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (report.areAllPermissionsGranted()) {
                     showSignInOptions();
-                } 
+                }
                 else {
 
                     Toast.makeText(MainActivity.this, "Please allow all the permissions", Toast.LENGTH_SHORT).show();
@@ -133,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
                                 if (!dataSnapshot.child(firebaseUser.getUid()).exists()) {
 
                                     Commonx.loggedUser = new User(firebaseUser.getUid(), firebaseUser.getEmail());
+
                                     //add to firebase
                                     user_informations.child(Commonx.loggedUser.getUid())
                                         .setValue(Commonx.loggedUser);
@@ -140,6 +142,10 @@ public class MainActivity extends AppCompatActivity {
                             } else //if user is available
                             {
                                 Commonx.loggedUser = dataSnapshot.child(firebaseUser.getUid()).getValue(User.class);
+                                Log.d("TAG2", "onDataChange: " + User.class);
+
+                                Log.d("TAG2", "onDataChange: " + dataSnapshot.child(firebaseUser.getUid()).getValue(User.class));
+
                             }
 
                             //saving UID to storage to update location background

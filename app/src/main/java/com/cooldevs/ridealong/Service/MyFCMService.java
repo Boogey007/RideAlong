@@ -47,6 +47,7 @@ public class MyFCMService extends FirebaseMessagingService {
         User userx = new User();
         userx.setUid(data.get(Commonx.FROM_UID));
         userx.setEmail(data.get(Commonx.FROM_NAME));
+        //userx.setPhone(data.get(Commonx.PhoneNumber));
 
         fr.child(userx.getUid()).setValue(userx);
 

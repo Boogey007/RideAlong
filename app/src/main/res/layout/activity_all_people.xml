@@ -12,10 +12,11 @@
     <com.mancj.materialsearchbar.MaterialSearchBar
 
         android:id="@+id/m_search_bar"
-        app:mt_hint="Enter the email"
+        app:mt_placeholder="Enter the email"
+        app:mt_placeholderColor="@color/colorPrimary"
         style="@style/MaterialSearchBarLight"
-        app:mt_hintColor="@color/colorAccent"
-
+        app:mt_hintColor="@color/colorPrimary"
+        app:mt_searchBarColor="@color/lightGray"
         app:mt_maxSuggestionsCount="5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

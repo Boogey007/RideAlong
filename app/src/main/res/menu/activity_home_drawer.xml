@@ -4,6 +4,7 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_find_people"
             android:icon="@drawable/ic_search_black_24dp"
@@ -33,7 +34,7 @@
     <item android:title="App Settings">
         <menu>
             <item
-                android:id="@+id/nav_sign_out"
+                android:id="@+id/nav_user_prefrences"
                 android:icon="@drawable/ic_exit_to_app_black_24dp"
                 android:title="Prefrences" />
             <item

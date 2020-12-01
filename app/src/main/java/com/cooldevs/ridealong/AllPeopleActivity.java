@@ -151,6 +151,8 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
 
 
                             userViewHolder.txt_user_email.setText(new StringBuilder(user.getEmail()).append(" (me)"));
+                           // userViewHolder.txt_user_phoneNumber.setText(new StringBuilder(user.getPhone()));
+
                             userViewHolder.itemView.setClickable(false);
                             userViewHolder.txt_user_email.setTypeface(userViewHolder.txt_user_email.getTypeface(), Typeface.ITALIC);
 
@@ -303,6 +305,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
                                                 User userx = new User();
                                                 userx.setUid(dataSend.get(Commonx.FROM_UID));
                                                 userx.setEmail(dataSend.get(Commonx.FROM_NAME));
+                                                //userx.setPhone(dataSend.get(Commonx.FROM_PHONE));
 
                                                 fr.child(userx.getUid()).setValue(userx);
 

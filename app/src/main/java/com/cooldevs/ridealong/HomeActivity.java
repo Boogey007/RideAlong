@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
@@ -31,6 +33,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import android.provider.Settings;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -131,12 +134,20 @@ public class HomeActivity extends AppCompatActivity
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
-    navigationView.setItemIconTintList(null);
+    navigationView.setItemIconTintList(ColorStateList.valueOf(Color.WHITE));
+    navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
 
     View headerView = navigationView.getHeaderView(0);
 
-    TextView txt_user_logged = (TextView) headerView.findViewById(R.id.txt_logged_emaail);
+    TextView txt_user_logged = (TextView) headerView.findViewById(R.id.txt_logged_email);
+    Log.d("TAG1", "onCreate: " + Commonx.loggedUser.getEmail());
     txt_user_logged.setText(Commonx.loggedUser.getEmail());
+
+    TextView txt_user_loggedName = (TextView) headerView.findViewById(R.id.txt_logged_name);
+    Log.d("TAG3", "onCreate: " + Commonx.loggedUser.getClass().toString());
+    txt_user_loggedName.setText(Commonx.loggedUser.getPhone());
+
+
 
     CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
     Picasso.get().load(Commonx.loggedUser.getImage()).placeholder(R.drawable.ic_person_outline_black_24dp).into(profileImageView);
@@ -229,8 +240,10 @@ public class HomeActivity extends AppCompatActivity
 
   //Check for the user in DB and fetch his emergency_contact_list
   protected void sendSms(){
+    int permissionCheck1 = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+
     int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
-    if(permissionCheck == PackageManager.PERMISSION_GRANTED){
+    if(permissionCheck == PackageManager.PERMISSION_GRANTED && permissionCheck1 == PackageManager.PERMISSION_GRANTED ){
       FirebaseDatabase db = FirebaseDatabase.getInstance();
       final DatabaseReference tempRef = db.getReference("UserInformation");
       tempRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -265,7 +278,13 @@ public class HomeActivity extends AppCompatActivity
     }
 
     else{
-      ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 1);
+
+      if( permissionCheck1 == 0 )
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 1);
+
+      if( permissionCheck == 0 )
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
+
     }
   }
 
@@ -459,7 +478,7 @@ public class HomeActivity extends AppCompatActivity
 
     if (id == R.id.nav_find_people) {
 
-      // TODO: implement some sort of code to use here...  
+      // TODO: implement some sort of code to use here...
       Intent showallusers = new Intent(HomeActivity.this, AllPeopleActivity.class);
       startActivity(showallusers);
 
@@ -490,7 +509,7 @@ public class HomeActivity extends AppCompatActivity
       Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
 
     }
-    else if (id == R.id.nav_user_settings) 
+    else if (id == R.id.nav_user_settings)
       startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
 
     else if( id == R.id.add_emergency_contact)

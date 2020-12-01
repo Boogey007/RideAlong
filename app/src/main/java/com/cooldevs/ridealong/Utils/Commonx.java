@@ -16,6 +16,7 @@ public class Commonx {
     public static final String USER_UID_SAVE_KEY = "SaveUid";
     public static final String TOKENS ="Tokens" ;
     public static final String FROM_NAME ="FromName" ;
+    public static final String FROM_PHONE ="FromPhone" ;
     public static final String ACCEPT_LIST ="acceptList" ;
     public static final String FROM_UID = "FromUid";
     public static final String TO_UID ="ToUid" ;
@@ -24,6 +25,7 @@ public class Commonx {
     public static final String PUBLIC_LOCATION = "PublicLocation";
     public static final String Car = "Car";
     public static final String Email = "email";
+    public static final String PhoneNumber = "phoneNumber";
     public static User loggedUser;
     public static User trackingUser;
     public static User userProfile;

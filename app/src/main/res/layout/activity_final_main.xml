@@ -15,7 +15,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FinalMainActivity"
-    android:background="@android:color/white">
+    android:background="@color/colorPrimary">
 
     <TextView
         android:id="@+id/group_name"
@@ -26,7 +26,7 @@
         android:layout_centerInParent="true"
         android:fontFamily="sans-serif-light"
         android:text="SnackOverflow"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@android:color/white"
         android:textSize="12sp" />
 
     <ImageView
@@ -68,9 +68,12 @@
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="3dp"
+        android:textColor="@color/colorPrimary"
         android:layout_marginRight="3dp"
         android:layout_marginBottom="72dp"
+        android:layout_centerInParent="true"
         android:text="Login with Email" />
+
 
     <com.shobhitpuri.custombuttons.GoogleSignInButton
         android:id="@+id/google_connect"
@@ -78,8 +81,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="27dp"
-        android:text="Connect with Google"
+        android:layout_marginBottom="24dp"
+        android:text="Connect with Google              "
+        android:textAlignment="center"
         app:isDarkTheme="true" />
 
     <TextView
