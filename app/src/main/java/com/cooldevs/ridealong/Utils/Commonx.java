@@ -10,6 +10,7 @@ import java.util.Date;
 
 import com.cooldevs.ridealong.Model.User;
 
+// shout out to IIQ for the name suggestion lol
 public class Commonx {
 
     public static final String USER_INFORMATION="UserInformation";

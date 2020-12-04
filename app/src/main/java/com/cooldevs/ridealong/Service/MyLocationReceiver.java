@@ -21,6 +21,8 @@ public class MyLocationReceiver extends BroadcastReceiver {
 
     String uid;
 
+// compare with https://stackoverflow.com/questions/59808970/getting-error-when-updating-location-in-background
+// should be fairly simple to grab location
     public MyLocationReceiver() {
         publicLocation = FirebaseDatabase.getInstance().getReference(Commonx.PUBLIC_LOCATION);
     }

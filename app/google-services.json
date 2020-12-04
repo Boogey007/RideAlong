@@ -1,48 +1,72 @@
 {
-    "project_info": {
-      "project_number": "379903889313",
-      "firebase_url": "https://fam-tracker-76c4b.firebaseio.com",
-      "project_id": "fam-tracker-76c4b",
-      "storage_bucket": "fam-tracker-76c4b.appspot.com"
-    },
-    "client": [
-      {
-        "client_info": {
-          "mobilesdk_app_id": "1:379903889313:android:a60ca238fed879b86cc5e0",
-          "android_client_info": {
-            "package_name": "com.cooldevs.ridealong"
+  "project_info": {
+    "project_number": "379903889313",
+    "firebase_url": "https://fam-tracker-76c4b.firebaseio.com",
+    "project_id": "fam-tracker-76c4b",
+    "storage_bucket": "fam-tracker-76c4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379903889313:android:9ed2d8e3f203112f6cc5e0",
+        "android_client_info": {
+          "package_name": "com.cooldevs.ridealong"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379903889313-2g6a6785rr5c22se8q6gu0p4l6bfrcvo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cooldevs.ridealong",
+            "certificate_hash": "77c557f21e27c38063fe416682adfee53478a7e5"
           }
         },
-        "oauth_client": [
-          {
-            "client_id": "379903889313-jidq5k72per3nbr0jlc2d27f3ovu4hdp.apps.googleusercontent.com",
-            "client_type": 1,
-            "android_info": {
-              "package_name": "com.cooldevs.ridealong",
-              "certificate_hash": "d44fb7a014de7a23c61bbaaf0906502eabef668c"
+        {
+          "client_id": "379903889313-jmfr1h4fa56ig782evuftfub11o845n2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cooldevs.ridealong",
+            "certificate_hash": "5aed922738738d692eeeb892178440f12bf0aa50"
+          }
+        },
+        {
+          "client_id": "379903889313-sgod0j19bc9i1q40mr7cdebia5urqpsb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cooldevs.ridealong",
+            "certificate_hash": "c5c6520d5123f2ead4b28e0dfd7c960e5bcd2709"
+          }
+        },
+        {
+          "client_id": "379903889313-vuku6i3a33ha7mcisffukjpqop6tdtkn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cooldevs.ridealong",
+            "certificate_hash": "d44fb7a014de7a23c61bbaaf0906502eabef668c"
+          }
+        },
+        {
+          "client_id": "379903889313-9j6grtbfsfuf3rhkjhl28g3cp15inl3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4wFyIji8--ovyfDm6Bed4VyaYCjRTjPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379903889313-9j6grtbfsfuf3rhkjhl28g3cp15inl3s.apps.googleusercontent.com",
+              "client_type": 3
             }
-          },
-          {
-            "client_id": "379903889313-9j6grtbfsfuf3rhkjhl28g3cp15inl3s.apps.googleusercontent.com",
-            "client_type": 3
-          }
-        ],
-        "api_key": [
-          {
-            "current_key": "AIzaSyD4wFyIji8--ovyfDm6Bed4VyaYCjRTjPI"
-          }
-        ],
-        "services": {
-          "appinvite_service": {
-            "other_platform_oauth_client": [
-              {
-                "client_id": "379903889313-9j6grtbfsfuf3rhkjhl28g3cp15inl3s.apps.googleusercontent.com",
-                "client_type": 3
-              }
-            ]
-          }
+          ]
         }
       }
-    ],
-    "configuration_version": "1"
-  }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -41,6 +41,7 @@ public class MyFCMService extends FirebaseMessagingService {
 
     }
 
+  // build friend requesst here
     private void addRequestToUserInformation(Map < String, String > data) {
 
         DatabaseReference fr = FirebaseDatabase.getInstance().getReference(Commonx.USER_INFORMATION).child(data.get(Commonx.TO_UID)).child(Commonx.FRIEND_REQUEST);
@@ -53,6 +54,8 @@ public class MyFCMService extends FirebaseMessagingService {
 
     }
 
+// attach that info to the notificatio nitself
+// take bits from https://stackoverflow.com/questions/41009936/firebase-onmessagereceivedremotemessage-remotemessage-is-not-called-when-the
     private void sendNotification(RemoteMessage remoteMessage) {
 
         Map < String, String > data = remoteMessage.getData();

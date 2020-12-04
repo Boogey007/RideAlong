@@ -1,48 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
 
+    <group android:checkableBehavior="single" android:id="@+id/group1">
         <item
             android:id="@+id/nav_find_people"
             android:icon="@drawable/ic_search_black_24dp"
             android:title="Find new people" />
-
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/group2">
         <item
             android:id="@+id/nav_add_people"
             android:icon="@drawable/ic_person_add_black_24dp"
             android:title="New friend requests" />
+    </group>
 
-        <item
+    <group android:checkableBehavior="single" android:id="@+id/group3">
+    <item
             android:id="@+id/nav_cars"
-            android:icon="@drawable/ic_person_add_black_24dp"
+            android:icon="@drawable/car_24"
             android:title="Cars" />
+    </group>
 
+    <group android:checkableBehavior="single" android:id="@+id/group4">
         <item
             android:id="@+id/nav_user_settings"
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="Profile" />
-        <item
-            android:id="@+id/add_emergency_contact"
-            android:icon="@drawable/ic_person_add_black_24dp"
-            android:title="Add Emergency Contact"/>
-
     </group>
 
-    <item android:title="App Settings">
-        <menu>
-            <item
-                android:id="@+id/nav_user_prefrences"
-                android:icon="@drawable/ic_exit_to_app_black_24dp"
-                android:title="Prefrences" />
+    <group android:checkableBehavior="single" android:id="@+id/group5">
+        <item
+            android:id="@+id/add_emergency_contact"
+            android:icon="@drawable/emer_cont"
+            android:title="Add Emergency Contact"/>
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/group6">
             <item
                 android:id="@+id/nav_sign_out"
                 android:icon="@drawable/ic_exit_to_app_black_24dp"
                 android:title="Sign Out" />
+    </group>
 
-        </menu>
-    </item>
 
+    <item
+        android:title="  "
+        android:id="@+id/asd"/>
+    <item
+        android:title="  "
+        android:id="@+id/asda"/>
+    <item
+        android:title="  "
+        android:id="@+id/assd"/>
+        <TextView
+            android:id="@+id/group_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="SnackOverflow"
+            android:textColor="@color/darkerGray"
+            android:layout_marginStart="@dimen/title_margin"
+            android:textSize="50sp" />
+
+    <item
+        android:textColor="@color/darkerGray"
+        android:title="SnackOverflow"
+        android:id="@+id/branding"/>
 </menu>

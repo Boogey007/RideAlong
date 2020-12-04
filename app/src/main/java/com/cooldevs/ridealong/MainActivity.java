@@ -48,7 +48,7 @@ import io.paperdb.Paper;
 
 import com.cooldevs.ridealong.R;
 
-
+// literally from SO lol https://stackoverflow.com/questions/57048486/new-activity-does-not-start
 public class MainActivity extends AppCompatActivity {
 
     DatabaseReference user_informations;
@@ -60,47 +60,40 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        setContentView(R.layout.activity_main);
         Paper.init(this);
 
+        // https://stackoverflow.com/questions/15772272/findviewbyid-returning-null-progressbar
         progressBar = (ProgressBar) findViewById(R.id.progress_bar_main);
         progressBar.setVisibility(View.VISIBLE);
 
         user_informations = FirebaseDatabase.getInstance().getReference(Commonx.USER_INFORMATION);
 
         providers = Arrays.asList(
-
             new AuthUI.IdpConfig.GoogleBuilder().build()
         );
 
+        // https://stackoverflow.com/questions/15698790/broadcast-receiver-for-checking-internet-connection-in-android-app
         myInternetConnectionReceiver = new MyInternetConnectionReceiver();
-
         Dexter.withActivity(this).withPermissions(Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE).withListener(new MultiplePermissionsListener() {
             @Override
             public void onPermissionsChecked(MultiplePermissionsReport report) {
-
                 if (report.areAllPermissionsGranted()) {
                     showSignInOptions();
                 }
                 else {
-
                     Toast.makeText(MainActivity.this, "Please allow all the permissions", Toast.LENGTH_SHORT).show();
-
                     finishAndRemoveTask();
                 }
-
             }
-
             @Override
             public void onPermissionRationaleShouldBeShown(List < PermissionRequest > permissions, PermissionToken token) {
-
                 token.continuePermissionRequest();
             }
 
         }).check();
-
     }
 
     private void showSignInOptions() {
@@ -148,8 +141,6 @@ public class MainActivity extends AppCompatActivity {
 
                             }
 
-                            //saving UID to storage to update location background
-
                             Paper.book().write(Commonx.USER_UID_SAVE_KEY, Commonx.loggedUser.getUid());
                             updateToken(firebaseUser);
                             setupUI();
@@ -171,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateToken(final FirebaseUser firebaseUser) {
-
+        // get new token from fb
         final DatabaseReference tokens = FirebaseDatabase.getInstance()
             .getReference(Commonx.TOKENS);
 

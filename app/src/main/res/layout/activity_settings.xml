@@ -68,12 +68,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upload new picture"
-        android:background="@color/colorAccent"
-        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:layout_below="@+id/settings_profile_image"
         android:layout_centerHorizontal="true"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:padding="8dp"
 
@@ -85,6 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile_image_change_btn"
         android:hint="Phone Number..."
+        android:text="Phone Number..."
         android:layout_margin="15dp"
         android:inputType="number"
         />

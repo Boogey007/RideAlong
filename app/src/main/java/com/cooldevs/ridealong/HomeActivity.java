@@ -33,6 +33,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import android.provider.Settings;
 import android.telephony.SmsManager;
+import android.text.SpannableString;
+import android.text.style.TextAppearanceSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -110,7 +112,7 @@ public class HomeActivity extends AppCompatActivity
     toolbar.setTitle("Friends");
 
     fusedLocationProviderClient2 = LocationServices.getFusedLocationProviderClient(this);
-    //Get current user for verification
+    //Get current user for verification though fb
     firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     current_user = firebaseUser.getEmail();
 
@@ -126,19 +128,21 @@ public class HomeActivity extends AppCompatActivity
       }
     });
 
+   // this nav was mad hard to build .. im sticking to html
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawer.addDrawerListener(toggle);
     toggle.syncState();
 
+    // reason for swtching  wayyy to diff to do siomple stuff
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
     navigationView.setItemIconTintList(ColorStateList.valueOf(Color.WHITE));
     navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
 
     View headerView = navigationView.getHeaderView(0);
-
+    // build top nav
     TextView txt_user_logged = (TextView) headerView.findViewById(R.id.txt_logged_email);
     Log.d("TAG1", "onCreate: " + Commonx.loggedUser.getEmail());
     txt_user_logged.setText(Commonx.loggedUser.getEmail());
@@ -146,7 +150,6 @@ public class HomeActivity extends AppCompatActivity
     TextView txt_user_loggedName = (TextView) headerView.findViewById(R.id.txt_logged_name);
     Log.d("TAG3", "onCreate: " + Commonx.loggedUser.getClass().toString());
     txt_user_loggedName.setText(Commonx.loggedUser.getPhone());
-
 
 
     CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
@@ -164,7 +167,7 @@ public class HomeActivity extends AppCompatActivity
 
     LoadFriends();
 
-    //Emergency notifier
+    //Emergency notifier button
     FloatingActionButton emergency_fab = (FloatingActionButton) findViewById(R.id.emergency_fab);
     emergency_fab.setOnClickListener(new View.OnClickListener() {
       @Override

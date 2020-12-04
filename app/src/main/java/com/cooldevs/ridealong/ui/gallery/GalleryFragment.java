@@ -13,7 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.cooldevs.ridealong.R;
-
+// these are all dupes .. https://developer.android.com/topic/libraries/architecture/viewmodel
 public class GalleryFragment extends Fragment {
 
     private GalleryViewModel galleryViewModel;
@@ -23,7 +23,7 @@ public class GalleryFragment extends Fragment {
         galleryViewModel = ViewModelProviders.of(this).get(GalleryViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        
+
         final TextView textView = root.findViewById(R.id.text_gallery);
         galleryViewModel.getText().observe(this, new Observer < String > () {
             @Override

@@ -7,6 +7,7 @@ import retrofit2.http.POST;
 import com.cooldevs.ridealong.Model.MyResponse;
 import com.cooldevs.ridealong.Model.Request;
 
+// this allows use of friends requests though fb
 public interface FBMessenger {
 
     @Headers({

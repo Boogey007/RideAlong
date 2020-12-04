@@ -40,7 +40,7 @@ import com.cooldevs.ridealong.ViewHolder.FriendRequestViewHolder;
 public class FriendRequestActivity extends AppCompatActivity implements IFirebaseLoadDone {
 
     FirebaseRecyclerAdapter < User, FriendRequestViewHolder > adapter, searchAdapter;
-    RecyclerView recycler_all_user;
+    RecyclerView rec_all_user;
     IFirebaseLoadDone firebaseLoadDone;
     TextView friend_request_empty;
 
@@ -52,20 +52,21 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend_request);
 
-        recycler_all_user = (RecyclerView) findViewById(R.id.recycler_all_people);
-        recycler_all_user.setHasFixedSize(true);
+        rec_all_user = (RecyclerView) findViewById(R.id.recycler_all_people);
+        rec_all_user.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recycler_all_user.setLayoutManager(layoutManager);
-        recycler_all_user.addItemDecoration(new DividerItemDecoration(this, ((LinearLayoutManager) layoutManager).getOrientation()));
+        rec_all_user.setLayoutManager(layoutManager);
+        rec_all_user.addItemDecoration(new DividerItemDecoration(this, ((LinearLayoutManager) layoutManager).getOrientation()));
 
         friend_request_empty = (TextView) findViewById(R.id.friend_request_list_is_empty);
         firebaseLoadDone = this;
 
-        loadFriendRequestList();
+        loadFRS();
 
     }
 
-    private void loadFriendRequestList() {
+    // get friend reqests from CX
+    private void loadFRS() {
 
         Query query = FirebaseDatabase.getInstance().getReference().child(Commonx.USER_INFORMATION)
             .child(Commonx.loggedUser.getUid())
@@ -75,16 +76,14 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
             .setQuery(query, User.class)
             .build();
 
-        adapter = new FirebaseRecyclerAdapter < User, FriendRequestViewHolder > (options) {
+            adapter = new FirebaseRecyclerAdapter < User, FriendRequestViewHolder > (options) {
 
             @Override
             protected void onBindViewHolder(@NonNull final FriendRequestViewHolder friendRequestViewHolder, int i, @NonNull final User user) {
 
 
-                if (getItemCount() > 0) {
+                if (getItemCount() > 0)
                     friend_request_empty.setText("You have new friend requests");
-                }
-
 
                 DatabaseReference referencexo = FirebaseDatabase.getInstance().getReference().child(Commonx.USER_INFORMATION);
 
@@ -98,18 +97,15 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
                             if (userx.child("image").exists()) {
                                 Picasso.get().load(userx.child("image").getValue().toString()).into(friendRequestViewHolder.friend_request_image);
                             }
-
-
                         }
                     }
 
                     @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
+                    public void onCancelled(@NonNull DatabaseError databaseError) { }
                 });
 
 
+                // https://stackoverflow.com/questions/46095087/unable-to-get-user-email-as-a-result-of-this-i-am-getting-nullpointer
                 friendRequestViewHolder.txt_user_email.setText(user.getEmail());
                 friendRequestViewHolder.btn_accept.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -124,16 +120,10 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
                 friendRequestViewHolder.btn_decline.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //remove friend request
-                        //Toast.makeText(FriendRequestActivity.this, "Friend request declined", Toast.LENGTH_SHORT).show();
-
                         deleteFriendRequest_2(user, true);
                         startActivity(new Intent(FriendRequestActivity.this, HomeActivity.class));
                     }
                 });
-
-
-
             }
 
             @NonNull
@@ -144,12 +134,10 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
 
                 return new FriendRequestViewHolder(itemView);
             }
-
-
         };
 
         adapter.startListening();
-        recycler_all_user.setAdapter(adapter);
+        rec_all_user.setAdapter(adapter);
 
 
 
@@ -157,21 +145,15 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
     }
 
     private void addUserToFriendContact(User user) {
-        //request sent info
-
         DatabaseReference acceptList = FirebaseDatabase.getInstance()
             .getReference(Commonx.USER_INFORMATION)
             .child(user.getUid())
             .child(Commonx.ACCEPT_LIST);
 
         acceptList.child(Commonx.loggedUser.getUid()).setValue(Commonx.loggedUser); //Commonx.loggedUser.getUid()--->user.getUid()
-
-
     }
 
     private void addToAcceptList(User user) {
-
-        //request got info
 
         DatabaseReference acceptList = FirebaseDatabase.getInstance()
             .getReference(Commonx.USER_INFORMATION)
@@ -182,8 +164,6 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
     }
 
     private void deleteFriendRequest(final User user, final boolean isShowMessage) {
-
-
 
         DatabaseReference friendRequest = FirebaseDatabase.getInstance()
             .getReference(Commonx.USER_INFORMATION)
@@ -230,7 +210,6 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
 
     private void loadSearchData() {
 
-
         final List < String > lsUserEmail = new ArrayList < > ();
         DatabaseReference userList = FirebaseDatabase.getInstance().getReference().child(Commonx.USER_INFORMATION)
             .child(Commonx.loggedUser.getUid())
@@ -251,7 +230,6 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
 
             }
         });
-
 
     }
 

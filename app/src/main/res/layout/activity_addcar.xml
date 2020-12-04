@@ -12,7 +12,7 @@
         android:id="@+id/textView2"
         android:layout_width="411dp"
         android:layout_height="73dp"
-        android:background="#448AFF"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -21,25 +21,17 @@
         android:id="@+id/textView"
         android:layout_width="411dp"
         android:layout_height="73dp"
-        android:background="#448AFF"
+        android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/backArrowCarsButton"
-        android:layout_width="50dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#448AFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"/>
-        !app:srcCompat="@drawable/backarrow" />
 
     <TextView
         android:id="@+id/selectedCar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add a New Car"
+        android:textColor="@color/colorAccent"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/textView"
@@ -47,15 +39,6 @@
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
-    <ImageButton
-        android:id="@+id/settingsButton"
-        android:layout_width="58dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"/>
-        !app:srcCompat="@drawable/settings" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -64,8 +47,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"/>
-        !app:srcCompat="@drawable/car" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:src="@drawable/final_main_image" />
+
+    <TextView
+        android:id="@+id/selectedCarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter car name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
         android:id="@+id/enterCarName"
@@ -79,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/selectedCarText" />
 
     <Button
         android:id="@+id/addNewCarButton"
@@ -88,7 +82,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="60dp"
-        android:backgroundTint="#44B4FF"
+        android:backgroundTint="@color/colorPrimary"
         android:text="Add Car"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

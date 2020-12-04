@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import com.cooldevs.ridealong.R;
-
+// built off of this https://stackoverflow.com/questions/41336654/android-studio-onmapready-not-called
 public class TrackingActivity extends FragmentActivity implements OnMapReadyCallback, ValueEventListener {
 
     private GoogleMap mMap;
@@ -38,7 +38,7 @@ public class TrackingActivity extends FragmentActivity implements OnMapReadyCall
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        
+
         registerEventRealTime();
     }
 

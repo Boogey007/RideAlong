@@ -20,6 +20,7 @@ public class AllFriendViewHolder extends RecyclerView.ViewHolder implements View
         this.iRecycItemListerner = iRecycItemListerner;
     }
 
+    // this needs to show image of user with email so  all_friends_profile_image and all_friends_txt_user_email
     public AllFriendViewHolder(@NonNull View itemView) {
         super(itemView);
 

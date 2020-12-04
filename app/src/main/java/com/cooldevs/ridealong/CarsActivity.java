@@ -80,14 +80,6 @@ public class CarsActivity extends AppCompatActivity {
 
         loggedUsername = Commonx.loggedUser.getEmail();
 
-
-
-
-
-
-
-
-
         //Query newx = referencex.orderByChild("uid").equalTo(user.getUid());
 
         carsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

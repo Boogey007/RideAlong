@@ -2,6 +2,8 @@ package com.cooldevs.ridealong.Model;
 
 import java.util.HashMap;
 
+// all we need to storre is UID EMAIL IMAGFE AND PHONE with G/S
+
 public class User {
 
     private String uid;

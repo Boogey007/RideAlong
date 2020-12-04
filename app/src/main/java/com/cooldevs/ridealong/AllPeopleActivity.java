@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import com.cooldevs.ridealong.Interface.IFirebaseLoadDone;
 import com.cooldevs.ridealong.Interface.IRecycItemListerner;
 import com.cooldevs.ridealong.Model.MyResponse;
@@ -35,12 +33,10 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
@@ -51,8 +47,8 @@ import com.cooldevs.ridealong.R;
 public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoadDone {
 
     FirebaseRecyclerAdapter<User, UserViewHolder> adapter,searchAdapter;
-    RecyclerView recycler_all_user;
-    IFirebaseLoadDone firebaseLoadDone;
+    RecyclerView rec_all_user;
+    IFirebaseLoadDone fbLoadFinsih;
 
 
     MaterialSearchBar searchBar;
@@ -73,21 +69,17 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
         searchBar.setCardViewElevation(5);
         searchBar.addTextChangeListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                  List<String> suggest = new ArrayList<>();
                  for(String search:suggestList){
-
+                     // simple search progressive lookup
                      if(search.toLowerCase().contains(searchBar.getText().toLowerCase()))
                          suggest.add(search);
                  }
-
                  searchBar.setLastSuggestions(suggest);
-
             }
 
             @Override
@@ -102,7 +94,8 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
                 if(!enabled){
 
                     if(adapter !=null){
-                        recycler_all_user.setAdapter(adapter);
+                       // next v2 is to make this not show all users
+                        rec_all_user.setAdapter(adapter);
                     }
                 }
 
@@ -110,9 +103,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
 
             @Override
             public void onSearchConfirmed(CharSequence text) {
-
                 startSearch(text.toString());
-
             }
 
             @Override
@@ -121,21 +112,23 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
             }
         });
 
-        recycler_all_user = (RecyclerView) findViewById(R.id.recycler_all_people);
-        recycler_all_user.setHasFixedSize(true);
+        rec_all_user = (RecyclerView) findViewById(R.id.recycler_all_people);
+        rec_all_user.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recycler_all_user.setLayoutManager(layoutManager);
-        recycler_all_user.addItemDecoration(new DividerItemDecoration(this,((LinearLayoutManager) layoutManager).getOrientation()));
+        rec_all_user.setLayoutManager(layoutManager);
+        rec_all_user.addItemDecoration(new DividerItemDecoration(this,((LinearLayoutManager) layoutManager).getOrientation()));
+        // next v2 is to make this not show all users
 
-        firebaseLoadDone = this;
-        loadUserList();
-        loadSearchData();
+        fbLoadFinsih = this;
+        getUsers();
+        getSeacrh();
 
     }
 
 
-    private void loadUserList() {
+    private void getUsers() {
 
+        // can really get tid of this or maybe only get users that you dont have on friends list
         Query query = FirebaseDatabase.getInstance().getReference().child(Commonx.USER_INFORMATION);
         FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
                 .setQuery(query,User.class)
@@ -149,14 +142,11 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
                         if(user.getImage()!=null){
                             Picasso.get().load(Commonx.loggedUser.getImage()).into(userViewHolder.recycler_profile_image);}
 
-
                             userViewHolder.txt_user_email.setText(new StringBuilder(user.getEmail()).append(" (me)"));
                            // userViewHolder.txt_user_phoneNumber.setText(new StringBuilder(user.getPhone()));
 
                             userViewHolder.itemView.setClickable(false);
                             userViewHolder.txt_user_email.setTypeface(userViewHolder.txt_user_email.getTypeface(), Typeface.ITALIC);
-
-
                     }
 
                     else {
@@ -199,7 +189,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
         };
 
         adapter.startListening();
-       recycler_all_user.setAdapter(adapter);
+       rec_all_user.setAdapter(adapter);
 
     }
 
@@ -357,29 +347,26 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
 
     }
 
-    private void loadSearchData() {
+    private void getSeacrh() {
         final List<String> lsUserEmail = new ArrayList<>();
-        DatabaseReference userList =FirebaseDatabase.getInstance()
-                .getReference(Commonx.USER_INFORMATION);
-        userList.addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseReference listOfUsers =FirebaseDatabase.getInstance().getReference(Commonx.USER_INFORMATION);
+
+        listOfUsers.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot userSnapShot:dataSnapshot.getChildren()){
                     User user=userSnapShot.getValue(User.class);
                     lsUserEmail.add(user.getEmail());
                 }
-                firebaseLoadDone.onFirebaseLoadUserNameDone(lsUserEmail);
+                fbLoadFinsih.onFirebaseLoadUserNameDone(lsUserEmail);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                firebaseLoadDone.onFirebaseLoadFailed(databaseError.getMessage());
+                fbLoadFinsih.onFirebaseLoadFailed(databaseError.getMessage());
 
             }
         });
-
-
-
     }
 
     private void startSearch(String txt_search) {
@@ -398,35 +385,31 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
 
         searchAdapter = new FirebaseRecyclerAdapter<User, UserViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull UserViewHolder userViewHolder, int i, @NonNull final User user) {
+            protected void onBindViewHolder(@NonNull UserViewHolder userVH, int i, @NonNull final User user) {
                 if(user.getEmail().equals(Commonx.loggedUser.getEmail())){
 
 
                     if(user.getImage()!=null){
-                        Picasso.get().load(Commonx.loggedUser.getImage()).into(userViewHolder.recycler_profile_image);}
-                    userViewHolder.txt_user_email.setText(new StringBuilder(user.getEmail()).append(" (me)"));
-                    userViewHolder.txt_user_email.setTypeface(userViewHolder.txt_user_email.getTypeface(), Typeface.ITALIC);
+                        Picasso.get().load(Commonx.loggedUser.getImage()).into(userVH.recycler_profile_image);}
+                    userVH.txt_user_email.setText(new StringBuilder(user.getEmail()).append(" (me)"));
+                    userVH.txt_user_email.setTypeface(userVH.txt_user_email.getTypeface(), Typeface.ITALIC);
                 }
 
                 else {
 
                     if(user.getImage()!=null){
-                        Picasso.get().load(user.getImage()).into(userViewHolder.recycler_profile_image);}
+                        Picasso.get().load(user.getImage()).into(userVH.recycler_profile_image);}
 
-                    userViewHolder.txt_user_email.setText(new StringBuilder(user.getEmail()));
-
-
-
+                    userVH.txt_user_email.setText(new StringBuilder(user.getEmail()));
                 }
 
-                userViewHolder.setiRecycItemListerner(new IRecycItemListerner() {
+                userVH.setiRecycItemListerner(new IRecycItemListerner() {
                     @Override
                     public void onItemClickListener(View view, int position) {
                         showDialogRequest(user);
 
                     }
                 });
-
             }
 
             @NonNull
@@ -440,21 +423,13 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
             }
         };
         searchAdapter.startListening();
-        recycler_all_user.setAdapter(searchAdapter);
+        rec_all_user.setAdapter(searchAdapter);
 
     }
 
     @Override
-    public void onFirebaseLoadUserNameDone(List<String> lstEmail) {
-
-       //searchBar.setLastSuggestions((lstEmail));
-
-    }
+    public void onFirebaseLoadUserNameDone(List<String> lstEmail) { }
 
     @Override
-    public void onFirebaseLoadFailed(String message) {
-
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-
-    }
+    public void onFirebaseLoadFailed(String msg) { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show(); }
 }

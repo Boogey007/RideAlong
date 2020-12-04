@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.shobhitpuri.custombuttons.GoogleSignInButton;
 
@@ -19,8 +21,9 @@ public class FinalMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_final_main);
 
         GoogleSignInButton signInButtonx;
-
         signInButtonx = (GoogleSignInButton) findViewById(R.id.google_connect);
+        Button register;
+        //register = findViewById(R.id.sign_up);
 
         signInButtonx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +32,15 @@ public class FinalMainActivity extends AppCompatActivity {
                 startActivity(new Intent(FinalMainActivity.this, MainActivity.class));
             }
         });
+
+       // register.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+      //      public void onClick(View view) {
+        //        Log.i("TAG1", "onClick: BUTTON CLICKED");
+        //        startActivity(new Intent(FinalMainActivity.this, RegisterActivity.class));
+        //    }
+       // });
+
     }
 
     @Override

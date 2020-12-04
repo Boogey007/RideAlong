@@ -37,7 +37,7 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-
+        // get all user info
         imageView = (CircleImageView) findViewById(R.id.friend_profile_image_view);
         friend_profile_address = (TextView) findViewById(R.id.friend_profile_address);
         friend_profile_name = (TextView) findViewById(R.id.friend_profile_name);
@@ -52,7 +52,7 @@ public class UserProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-
+                    // do check to make sure filled out
                     //Toast.makeText(UserProfileActivity.this, dataSnapshot.child("image").getValue().toString(), Toast.LENGTH_LONG).show();
                     if (dataSnapshot.child("image").exists()) {
                         Picasso.get().load(dataSnapshot.child("image").getValue().toString()).into(imageView);
@@ -66,7 +66,6 @@ public class UserProfileActivity extends AppCompatActivity {
                     if (dataSnapshot.child("phoneNumber").exists()) {
                         friend_profile_phone.setText(dataSnapshot.child("phoneNumber").getValue().toString());
                     }
-
                     if (dataSnapshot.child("email").exists()) {
                         friend_profile_email.setText(dataSnapshot.child("email").getValue().toString());
                     }

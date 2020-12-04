@@ -22,6 +22,11 @@
         <activity android:name="com.cooldevs.ridealong.UserProfileActivity"></activity>
         <activity android:name="com.cooldevs.ridealong.SettingsActivity" />
         <activity android:name="com.cooldevs.ridealong.FinalMainActivity" />
+
+        <!-- new login stoof -->
+        <activity android:name="com.cooldevs.ridealong.LoginActivity" />
+        <activity android:name="com.cooldevs.ridealong.RegisterActivity" />
+
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />

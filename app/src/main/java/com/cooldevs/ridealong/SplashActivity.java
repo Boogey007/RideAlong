@@ -20,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        // coolest part of the app.. need this to zoom in and out
         final ImageView splash_image;
         splash_image=(ImageView)findViewById(R.id.splash_image);
         final Animation aniSlide = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_in);
