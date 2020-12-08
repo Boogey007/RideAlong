@@ -24,7 +24,7 @@
         android:layout_below="@+id/final_main_image"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/mmed"
         android:text="SnackOverflow"
         android:textColor="@color/iiQYellow"
         android:textSize="12sp" />
@@ -42,7 +42,7 @@
         android:layout_centerInParent="true"
         android:textColor="@color/colorAccent"
         android:textSize="40sp"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/mmed"
         android:id="@+id/main_about"
         android:layout_below="@+id/final_main_image"
         android:text="Ride Along"
@@ -52,7 +52,7 @@
     <TextView
         android:layout_centerInParent="true"
         android:textColor="@color/iiQYellow"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/mmed"
         android:textSize="15dp"
         android:id="@+id/main_about2"
         android:layout_below="@+id/main_about"

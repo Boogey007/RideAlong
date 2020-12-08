@@ -7,16 +7,22 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/text_color_dark</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:fontFamily">@font/mmed</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/mmed</item>
+
     </style>
 
 
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
+        <item name="android:fontFamily">@font/mmed</item>
+
         <item name="color">@color/colorAccent</item>
     </style>
 
@@ -25,6 +31,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="TextAppearance44">
+        <item name="android:fontFamily">@font/mmed</item>
         <item name="android:textColor">#FF0000</item>
         <item name="android:textSize">20sp</item>
     </style>
