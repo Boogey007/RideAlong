@@ -28,7 +28,6 @@ public class UserViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
         recycler_profile_image=(CircleImageView) itemView.findViewById(R.id.recycler_profile_image);
         txt_user_email = (TextView) itemView.findViewById(R.id.txt_user_email);
-        //txt_user_phoneNumber = (TextView) itemView.findViewById(R.id.txt_user_phoneNumber);
         itemView.setOnClickListener(this);
     }
 

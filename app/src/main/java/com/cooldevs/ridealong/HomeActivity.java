@@ -135,7 +135,7 @@ public class HomeActivity extends AppCompatActivity
     drawer.addDrawerListener(toggle);
     toggle.syncState();
 
-    // reason for swtching  wayyy to diff to do siomple stuff
+    // reason for swtching  wayyy to diff to do simple stuff
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
     navigationView.setItemIconTintList(ColorStateList.valueOf(Color.WHITE));
@@ -317,6 +317,7 @@ public class HomeActivity extends AppCompatActivity
     }
   }
 
+  //Loads the accepted friends in the friend list
   private void LoadFriends() {
 
     // Need to make this to where it can be code specific somehow to not show everyone
@@ -359,6 +360,7 @@ public class HomeActivity extends AppCompatActivity
           }
         });
 
+        //Displaying the tracking view on clicking friends
         allFriendViewHolder.setiRecycItemListerner(new IRecycItemListerner() {
           @Override
           public void onItemClickListener(View view, int position) {

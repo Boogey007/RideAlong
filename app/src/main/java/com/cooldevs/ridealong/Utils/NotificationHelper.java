@@ -33,7 +33,7 @@ public class NotificationHelper extends ContextWrapper {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void createChannel() {
-        // https://developer.android.com/reference/android/app/NotificationChannel
+        // refernce https://developer.android.com/reference/android/app/NotificationChannel
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID,CHANNEL_NAME,NotificationManager.IMPORTANCE_DEFAULT);
 
         channel.enableLights(true);
@@ -56,7 +56,7 @@ public class NotificationHelper extends ContextWrapper {
         return manager;
     }
 
-// refer to this https://stackoverflow.com/questions/61696587/location-tracker-by-using-firebase  im kinda lost
+// refer to this https://stackoverflow.com/questions/61696587/location-tracker-by-using-firebase for request notifictaion
     @RequiresApi(api = Build.VERSION_CODES.O)
     public Notification.Builder getLocationTrackerNotification(String title, String content, Uri defaultsound) {
         Intent intent = new Intent(this, FriendRequestActivity.class);

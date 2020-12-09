@@ -13,7 +13,7 @@ public class Request {
         this.to = to;
         this.data = data;
     }
-
+    //getter/setters
     public String getTo() {
         return to;
     }
