@@ -22,8 +22,6 @@ public class FinalMainActivity extends AppCompatActivity {
 
         GoogleSignInButton signInButtonx;
         signInButtonx = (GoogleSignInButton) findViewById(R.id.google_connect);
-        Button register;
-        //register = findViewById(R.id.sign_up);
 
         signInButtonx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,13 +31,6 @@ public class FinalMainActivity extends AppCompatActivity {
             }
         });
 
-       // register.setOnClickListener(new View.OnClickListener() {
-       //     @Override
-      //      public void onClick(View view) {
-        //        Log.i("TAG1", "onClick: BUTTON CLICKED");
-        //        startActivity(new Intent(FinalMainActivity.this, RegisterActivity.class));
-        //    }
-       // });
 
     }
 

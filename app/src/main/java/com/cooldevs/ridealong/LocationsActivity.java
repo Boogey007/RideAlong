@@ -39,7 +39,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LocationsActivity extends AppCompatActivity implements OnMapReadyCallback{
-    //ImageButton back;
     Button park;
     TextView currentDriver;
     TextView selectedCar, locationText;
@@ -56,7 +55,6 @@ public class LocationsActivity extends AppCompatActivity implements OnMapReadyCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
 
-        //back = findViewById(R.id.backArrowGoogleButton);
         park = findViewById(R.id.parkButton);
         currentDriver = findViewById(R.id.currentDriver);
         selectedCar = findViewById(R.id.selectedCar);
@@ -73,6 +71,8 @@ public class LocationsActivity extends AppCompatActivity implements OnMapReadyCa
                 .getReference(Commonx.USER_INFORMATION)
                 .child(Commonx.loggedUser.getUid())
                 .child(Commonx.Car).child(carID);
+
+        //updates the username and location on UI once the Park button is clicked and current location gets updated
         car.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -101,14 +101,10 @@ public class LocationsActivity extends AppCompatActivity implements OnMapReadyCa
             }
         });
 
-       /* back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });*/
+
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        //fetches the current location on click of Park button
         park.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

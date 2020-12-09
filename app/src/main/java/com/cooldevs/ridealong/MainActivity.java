@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Paper.init(this);
 
-        // https://stackoverflow.com/questions/15772272/findviewbyid-returning-null-progressbar
+        // reference https://stackoverflow.com/questions/15772272/findviewbyid-returning-null-progressbar
         progressBar = (ProgressBar) findViewById(R.id.progress_bar_main);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             new AuthUI.IdpConfig.GoogleBuilder().build()
         );
 
-        // https://stackoverflow.com/questions/15698790/broadcast-receiver-for-checking-internet-connection-in-android-app
+        // reference https://stackoverflow.com/questions/15698790/broadcast-receiver-for-checking-internet-connection-in-android-app
         myInternetConnectionReceiver = new MyInternetConnectionReceiver();
         Dexter.withActivity(this).withPermissions(Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE).withListener(new MultiplePermissionsListener() {
@@ -225,9 +225,6 @@ public class MainActivity extends AppCompatActivity {
             View snackbarView = snackbar.getView();
             snackbarView.setBackgroundColor(Color.RED);
             snackbar.show();
-
-            //Snackbar.make(getWindow().getDecorView().getRootView(), "No internet connection", Snackbar.LENGTH_INDEFINITE).show();
-
 
         }
 
