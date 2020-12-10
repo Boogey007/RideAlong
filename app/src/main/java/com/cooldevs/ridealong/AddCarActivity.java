@@ -20,8 +20,6 @@ public class AddCarActivity extends AppCompatActivity {
 
     EditText enterCarName;
     Button addNewCarButton;
-    //ImageButton back;
-    String family;
 
     private DatabaseReference mDatabase;
 
@@ -30,12 +28,8 @@ public class AddCarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addcar);
 
-        //back = findViewById(R.id.backArrowCarsButton);
         enterCarName = findViewById(R.id.enterCarName);
         addNewCarButton = findViewById(R.id.addNewCarButton);
-
-        //mDatabase = FirebaseDatabase.getInstance().getReference();
-        //family = getIntent().getExtras().getString("family");
 
         addNewCarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,10 +44,9 @@ public class AddCarActivity extends AppCompatActivity {
                             .child(Commonx.loggedUser.getUid())
                             .child(Commonx.Car);
 
-                    // need to also get name
+                    // need to also get car name
                     String newId = car.push().getKey();
                     car.child(newId).child("name").setValue(enterCarName.getText().toString());
-                    //String newId = car.getKey();
                     Log.d("carkey",newId);
 
                     // set default values cause 0.0 is a no no

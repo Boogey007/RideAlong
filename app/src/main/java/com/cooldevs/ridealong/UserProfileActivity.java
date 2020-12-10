@@ -53,7 +53,6 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     // do check to make sure filled out
-                    //Toast.makeText(UserProfileActivity.this, dataSnapshot.child("image").getValue().toString(), Toast.LENGTH_LONG).show();
                     if (dataSnapshot.child("image").exists()) {
                         Picasso.get().load(dataSnapshot.child("image").getValue().toString()).into(imageView);
                     }
@@ -86,6 +85,7 @@ public class UserProfileActivity extends AppCompatActivity {
         });
     }
 
+    // Dialog for Cancel/remove
     private void showDialogRequest(final User user) {
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this, R.style.ThemeOverlay_MaterialComponents_Dialog_Alert);

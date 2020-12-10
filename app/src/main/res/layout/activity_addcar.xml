@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:text="Add a New Car"
         android:textColor="@color/colorAccent"
-        android:textSize="36sp"
+        android:textSize="37sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.5"

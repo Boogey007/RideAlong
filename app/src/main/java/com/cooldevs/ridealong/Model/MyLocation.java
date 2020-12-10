@@ -1,7 +1,7 @@
 package com.cooldevs.ridealong.Model;
 
-// just copy this tbh // https://stackoverflow.com/questions/20121159/how-to-serialize-for-android-location-class
-// but change togetters and setters
+// reference  https://stackoverflow.com/questions/20121159/how-to-serialize-for-android-location-class
+// but change to getters and setters
 
 public class MyLocation {
 

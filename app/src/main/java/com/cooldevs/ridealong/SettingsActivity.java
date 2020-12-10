@@ -73,6 +73,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        //saving info on update account
         saveTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,9 +98,8 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
-
+    //validations for empty fields and pushing to db
     private void updateOnlyUserInfo()
-
     {
         if (TextUtils.isEmpty(fullNameEditText.getText().toString())) {
             Toast.makeText(this, "Fill up all the fields", Toast.LENGTH_SHORT).show();
@@ -143,7 +143,8 @@ public class SettingsActivity extends AppCompatActivity {
             finish();
         }
     }
-     // contemplating ddelteing these idk yet need to check firebase
+
+    // validation for image upload
     private void userInfoSaved() {
         if (TextUtils.isEmpty(fullNameEditText.getText().toString())) {
             Toast.makeText(this, "Fill up all the fields", Toast.LENGTH_SHORT).show();
@@ -160,7 +161,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
-
+    //image upload to fb
     private void uploadImage() {
 
         final ProgressBar progressBar = findViewById(R.id.progressBar1);
@@ -168,7 +169,6 @@ public class SettingsActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
             WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
-        // contemplating ddelteing these idk yet need to check firebase
         if (TextUtils.isEmpty(fullNameEditText.getText().toString())) {
             Toast.makeText(this, "Fill up all the fields", Toast.LENGTH_SHORT).show();
         } 
@@ -239,6 +239,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
+    //displaying the updated info of the user
     private void userInfoDisplay(final CircleImageView profileImageView, final EditText fullNameEditText, final EditText userPhoneEditText, final EditText addressEditText) {
         DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child(Commonx.USER_INFORMATION).child(Commonx.loggedUser.getUid());
 

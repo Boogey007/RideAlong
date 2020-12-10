@@ -17,7 +17,7 @@ public class FriendRequestViewHolder extends RecyclerView.ViewHolder  {
     public CircleImageView friend_request_image;
 
 
-    // send a frinds requrst also need accept and deny button here 
+    // send a friends request also need accept and deny button here
     public FriendRequestViewHolder(@NonNull View itemView) {
         super(itemView);
 
